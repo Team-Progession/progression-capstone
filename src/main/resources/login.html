@@ -9,7 +9,7 @@
 <body>
 <div class="row">
     <h1>Login Page</h1>
-    <form th : action="${/login}" method="post">
+    <form th:action="@{/login}" method="post">
 
         <div th:if="${param.error}"></div>
 
