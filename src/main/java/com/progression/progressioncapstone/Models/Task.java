@@ -1,4 +1,4 @@
-package com.progression;
+package com.progression.progressioncapstone.Models;
 import javax.persistence.*;
 
 
