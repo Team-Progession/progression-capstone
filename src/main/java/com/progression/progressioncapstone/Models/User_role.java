@@ -1,4 +1,4 @@
-package com.progression;
+package com.progression.progressioncapstone.Models;
 
 
 import javax.persistence.*;
@@ -17,7 +17,7 @@ public class User_role {
     @Column(nullable = false)
     private String role;
 
-    public User_role{
+    public User_role(){
     }
 
     public User_role(int role_id, String role) {
