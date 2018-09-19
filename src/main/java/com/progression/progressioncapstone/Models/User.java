@@ -1,24 +1,14 @@
 package com.progression.progressioncapstone.Models;
 
 
-import org.springframework.data.annotation.Id;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Table;
+
+import javax.persistence.*;
+
 
 @Entity
 @Table(name = "users")
 public class User {
-
-    public User(User copy) {
-        id = copy.id; // This line is SUPER important! Many things won't work if it's absent
-        email = copy.email;
-        username = copy.username;
-        password = copy.password;
-    }
-
 
     @Id
     @GeneratedValue
@@ -49,6 +39,13 @@ public class User {
         this.lastName = lastName;
         this.password = password;
         this.username = username;
+    }
+
+    public User(User copy) {
+        id = copy.id; // This line is SUPER important! Many things won't work if it's absent
+        email = copy.email;
+        username = copy.username;
+        password = copy.password;
     }
 
     public long getId() {

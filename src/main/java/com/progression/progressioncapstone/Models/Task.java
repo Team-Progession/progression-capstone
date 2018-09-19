@@ -20,17 +20,17 @@ public class Task {
     private String description;
 
     @Column(nullable = false)
-    private double order;
+    private double tOrder;
 
     public Task(){
     }
 
-    public Task(long id, long project_id, String title, String description, double order) {
+    public Task(long id, long project_id, String title, String description, double tOrder) {
         this.id = id;
         this.project_id = project_id;
         this.title = title;
         this.description = description;
-        this.order = order;
+        this.tOrder = tOrder;
     }
 
     public long getId() {
@@ -65,12 +65,12 @@ public class Task {
         this.description = description;
     }
 
-    public double getOrder() {
-        return order;
+    public double gettOrder() {
+        return tOrder;
     }
 
-    public void setOrder(double order) {
-        this.order = order;
+    public void settOrder(double order) {
+        this.tOrder = tOrder;
     }
 }
 
