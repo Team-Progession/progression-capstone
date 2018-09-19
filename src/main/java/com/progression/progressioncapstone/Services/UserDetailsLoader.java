@@ -5,7 +5,6 @@ package com.progression.progressioncapstone.Services;
 import com.progression.progressioncapstone.Models.User;
 import com.progression.progressioncapstone.Models.UserWithRoles;
 import com.progression.progressioncapstone.Repositories.Users;
-import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

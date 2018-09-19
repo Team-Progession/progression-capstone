@@ -1,4 +1,4 @@
-package com.progression.progressioncapstone.Models;
+package com.progression.progressioncapstone;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
