@@ -6,9 +6,9 @@
 - [ ] User will be able to login to account
 - [ ] User will be able to access their Profile Page
 - [ ] User will be able to see associated projects on Profile Page
-- [ ] User will be able to visit Create Project page and make new project
+- [ ] User will be able to visit Create Project page and make new project and tasks
 - [ ] User will be able to view newly created project on View Project Details page
-- [ ] User will be able to edit posted projects
+- [ ] User will be able to edit posted projects and tasks
 - [ ] User will be redirected back to landing page once logged out
   
   
