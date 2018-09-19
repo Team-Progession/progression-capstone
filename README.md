@@ -28,3 +28,5 @@ Views
 - [X] User - Justin
 - [ ] Project - Mando
 - [X] UserRepos - Justin
+
+- [X] DEPLOYMENT - Stephen
