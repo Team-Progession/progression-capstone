@@ -29,4 +29,5 @@ Views
 - [ ] Project - Mando
 - [X] UserRepos - Justin
 
+Server
 - [X] DEPLOYMENT - Stephen
