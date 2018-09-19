@@ -20,7 +20,7 @@ Views
 - [X] Register - Justin
 - [X] Profile - Justin
 - [X] Project(index) - Linda
-- [ ] Project (create) - Linda
+- [X] Project (create) - Linda
 - [ ] Project (edit) - Linda
 - [X] Navbar - Justin
   
