@@ -26,5 +26,5 @@ Views
   
  Repos
 - [X] User - Justin
-- [ ] Project - 
+- [ ] Project - Mando
 - [X] UserRepos - Justin
