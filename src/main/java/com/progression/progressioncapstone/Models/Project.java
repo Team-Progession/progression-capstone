@@ -1,6 +1,7 @@
 package com.progression.progressioncapstone.Models;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "projects")
@@ -18,25 +19,39 @@ public class Project {
     @Column(nullable = false)
     private String date;
 
-    public Project(){
+    @OneToMany(mappedBy = "project")
+    private List<Role> userlist;
 
+    @OneToMany(mappedBy = "project")
+    private List<Task> tasks;
+
+    @ManyToOne
+    @JoinColumn(name = "owner")
+    private User owner;
+
+    public Project() {
     }
 
-    public Project(String title, String description, String date){
+    public Project(String title, String description, String date, List<Role> userlist, List<Task> tasks, User owner) {
         this.title = title;
         this.description = description;
         this.date = date;
+        this.userlist = userlist;
+        this.tasks = tasks;
+        this.owner = owner;
     }
 
-    public Project(long id, String title, String description, String date){
-        this.id = id;
-        this.title = title;
-        this.description = description;
-        this.date = date;
-    }
     @Override
     public String toString() {
         return String.format("ID: %d, TITLE: %s, DESCRIPTION: %s", id, title, description);
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -55,22 +70,37 @@ public class Project {
         this.description = description;
     }
 
-
-    public String getDate(){
+    public String getDate() {
         return date;
     }
 
-    public void setDate(String date){
-        this.title = title;
+    public void setDate(String date) {
+        this.date = date;
     }
 
-    public long getId() {
-        return id;
-    }
-    public void setId(long id) {
-        this.id = id;
+    public List<Role> getUserlist() {
+        return userlist;
     }
 
+    public void setUserlist(List<Role> userlist) {
+        this.userlist = userlist;
+    }
+
+    public List<Task> getTasks() {
+        return tasks;
+    }
+
+    public void setTasks(List<Task> tasks) {
+        this.tasks = tasks;
+    }
+
+    public User getOwner() {
+        return owner;
+    }
+
+    public void setOwner(User owner) {
+        this.owner = owner;
+    }
 }
 
 //format for fK
