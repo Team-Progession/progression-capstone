@@ -5,7 +5,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "user_role")
-public class User_role {
+public class UserRole {
 
     @Id
     @GeneratedValue
@@ -17,10 +17,10 @@ public class User_role {
     @Column(nullable = false)
     private String role;
 
-    public User_role(){
+    public UserRole(){
     }
 
-    public User_role(int role_id, String role) {
+    public UserRole(int role_id, String role) {
         this.role_id = role_id;
         this.role = role;
     }
