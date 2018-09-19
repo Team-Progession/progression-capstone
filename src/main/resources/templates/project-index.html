@@ -11,6 +11,13 @@
             <div th:text="${project.description}">Step description</div>
             <button>Sign off</button>
         </div>
+    <br/>
+    <div th:each="project : ${projects}">Title of Project</div>
+    <div>Name of Step</div>
+    <div th:text="${project.description}">Step description</div>
+    <button>Sign off</button>
+    </div>
+    <br/>
     </div>
 </body>
 
