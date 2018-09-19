@@ -10,8 +10,6 @@ public class Task {
     @GeneratedValue
     private long id;
 
-    @Column(nullable = false)
-    private long project_id;
 
     @Column(nullable = false)
     private String title;
@@ -22,15 +20,22 @@ public class Task {
     @Column(nullable = false)
     private double taskOrder;
 
-    public Task(){
+    @Column(nullable = false)
+    private boolean isComplete;
+
+    @ManyToOne
+    @JoinColumn(name = "project")
+    private Project project;
+
+    public Task() {
     }
 
-    public Task(long id, long project_id, String title, String description, double taskOrder) {
-        this.id = id;
-        this.project_id = project_id;
+    public Task(String title, String description, double taskOrder, boolean isComplete, Project project) {
         this.title = title;
         this.description = description;
         this.taskOrder = taskOrder;
+        this.isComplete = isComplete;
+        this.project = project;
     }
 
     public long getId() {
@@ -39,14 +44,6 @@ public class Task {
 
     public void setId(long id) {
         this.id = id;
-    }
-
-    public long getProject_id() {
-        return project_id;
-    }
-
-    public void setProject_id(long project_id) {
-        this.project_id = project_id;
     }
 
     public String getTitle() {
@@ -65,12 +62,28 @@ public class Task {
         this.description = description;
     }
 
-    public double getOrder() {
+    public double getTaskOrder() {
         return taskOrder;
     }
 
-    public void setOrder(double order) {
+    public void setTaskOrder(double taskOrder) {
         this.taskOrder = taskOrder;
+    }
+
+    public boolean isComplete() {
+        return isComplete;
+    }
+
+    public void setComplete(boolean complete) {
+        isComplete = complete;
+    }
+
+    public Project getProject() {
+        return project;
+    }
+
+    public void setProject(Project project) {
+        this.project = project;
     }
 }
 

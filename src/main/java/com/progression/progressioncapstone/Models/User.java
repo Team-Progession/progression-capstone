@@ -4,6 +4,7 @@ package com.progression.progressioncapstone.Models;
 
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
@@ -29,6 +30,12 @@ public class User {
 
     @Column(nullable = false, unique = true)
     private String username;
+
+    @OneToMany(mappedBy = "owner")
+    private List<Project> projectsOwned;
+
+    @OneToMany(mappedBy = "user")
+    private List<Role> roleList;
 
     public User(){
     }
