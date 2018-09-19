@@ -19,7 +19,7 @@ Views
 - [X] Login - Mando
 - [X] Register - Justin
 - [X] Profile - Justin
-- [ ] Project(index) - Linda
+- [X] Project(index) - Linda
 - [ ] Project (create) - Linda
 - [ ] Project (edit) - Linda
 - [X] Navbar - Justin
