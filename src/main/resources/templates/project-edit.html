@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments/head :: head('Project Details')"></head>
+
+<nav th:replace="fragments/navbar :: navbar"></nav>
+<body>
+<div>
+    <h1>Create Project</h1>
+    <div>
+        <div>
+            <form th:method="post" th:object="${project}">
+
+                <label for="">Name of Project</label>
+                <input type="text" th:field="*{title}" />
+
+                <label for="">Projected Completion Date</label>
+                <input type="text" th:field="*{date}" />
+
+                <label for="">Project Sumarry</label>
+                <input type="text" th:field="*{description}" />
+
+            </form>
+        </div>
+
+        <div>
+            <form th:method="post" th:object="${task}">
+
+                <label for="">Task Title</label>
+                <input type="text" th:field="*{title}" />
+
+                <label for="">Task Number</label>
+                <input type="text" th:field="*{order}" />
+
+                <label for="">Task Description</label>
+                <input type="text" th:field="*{description}" />
+                <button class="btn btn-primary">Next Step</button>
+            </form>
+        </div>
+    </div>
+    <button class="btn btn-primary">Submit</button>
+</div>
+</div>
+</body>
+
+
+</html>
