@@ -1,33 +1,45 @@
 # progression-capstone
   Progression Capstone Feature List
+
+- [ ] User will be able to access landing page
+- [ ] User will be able to register an account
+- [ ] User will be able to login to account
+- [ ] User will be able to access their Profile Page
+- [ ] User will be able to see associated projects on Profile Page
+- [ ] User will be able to visit Create Project page and make new project
+- [ ] User will be able to view newly created project on View Project Details page
+- [ ] User will be able to edit posted projects
+- [ ] User will be redirected back to landing page once logged out
+  
+  
   
 Models
-- [X] User - Mando
-- [X] Project - Linda
-- [X] Task - Mando
-- [X] UserRole - Mando
-- [X] UserWithRoles - Justin
+- [ ] User - Mando
+- [ ] Project - Linda
+- [ ] Task - Mando
+- [ ] UserRole - Mando
+- [ ] UserWithRoles - Justin
 
 Controllers
-- [X] User - Justin
-- [X] Home - Mando
-- [X] Project - Mando 
-- [X] AuthController - Justin
+- [ ] User - Justin
+- [ ] Home - Mando
+- [ ] Project - Mando 
+- [ ] AuthController - Justin
   
 Views
-- [X] Landing - Linda
-- [X] Login - Mando
-- [X] Register - Justin
-- [X] Profile - Justin
-- [X] Project(index) - Linda
+- [ ] Landing - Linda
+- [ ] Login - Mando
+- [ ] Register - Justin
+- [ ] Profile - Justin
+- [ ] Project(index) - Linda
 - [ ] Project (create) - Linda
 - [ ] Project (edit) - Linda
-- [X] Navbar - Justin
+- [ ] Navbar - Justin
   
  Repos
-- [X] User - Justin
+- [ ] User - Justin
 - [ ] Project - Mando
-- [X] UserRepos - Justin
+- [ ] UserRepos - Justin
 
 Server
-- [X] DEPLOYMENT - Stephen
+- [ ] DEPLOYMENT - Stephen
