@@ -2,27 +2,29 @@
   Progression Capstone Feature List
   
 Models
-- [ ] User - Mando
-- [ ] UserRole - Mando
-- [ ] UserWithRoles - Justin
+- [X] User - Mando
+- [X] Project - Linda
+- [X] Task - Mando
+- [X] UserRole - Mando
+- [X] UserWithRoles - Justin
 
 Controllers
-- [ ] User - Justin
-- [ ] Home - Mando
-- [ ] Project - Mando 
-- [ ] AuthController - Justin
+- [X] User - Justin
+- [X] Home - Mando
+- [X] Project - Mando 
+- [X] AuthController - Justin
   
 Views
-- [ ] Landing - Linda
-- [ ] Login - Mando
-- [ ] Register - Justin
-- [ ] Profile - Justin
+- [X] Landing - Linda
+- [X] Login - Mando
+- [X] Register - Justin
+- [X] Profile - Justin
 - [ ] Project(index) - Linda
 - [ ] Project (create) - Linda
 - [ ] Project (edit) - Linda
+- [X] Navbar - Justin
   
  Repos
-- [ ] User - Justin
-- [ ] Project - Linda
-- [ ] UserRepos - Justin
-  
+- [X] User - Justin
+- [ ] Project - 
+- [X] UserRepos - Justin
