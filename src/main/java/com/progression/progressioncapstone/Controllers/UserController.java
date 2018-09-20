@@ -2,6 +2,7 @@ package com.progression.progressioncapstone.Controllers;
 
 import com.progression.progressioncapstone.Models.User;
 import com.progression.progressioncapstone.Repositories.Users;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,5 +32,11 @@ public class UserController {
         user.setPassword(hash);
         users.save(user);
         return "redirect:/login";
+    }
+
+    @GetMapping("/profile")
+    public String showProfile(Model model){
+        model.addAttribute("user", SecurityContextHolder.getContext().getAuthentication().getPrincipal());
+        return "/users/profile";
     }
 }
