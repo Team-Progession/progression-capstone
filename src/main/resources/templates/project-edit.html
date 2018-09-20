@@ -10,14 +10,14 @@
         <div>
             <form th:method="post" th:object="${project}">
 
-                <label for="">Name of Project</label>
-                <input type="text" th:field="*{title}" />
+                <label for="pTitle">Name of Project</label>
+                <input id="pTitle" type="text" th:field="*{title}" />
 
-                <label for="">Projected Completion Date</label>
-                <input type="text" th:field="*{date}" />
+                <label for="pDate">Projected Completion Date</label>
+                <input id="pDate" type="text" th:field="*{date}" />
 
-                <label for="">Project Sumarry</label>
-                <input type="text" th:field="*{description}" />
+                <label for="pDescription">Project Sumarry</label>
+                <input id="pDescription" type="text" th:field="*{description}" />
 
             </form>
         </div>
@@ -25,14 +25,14 @@
         <div>
             <form th:method="post" th:object="${task}">
 
-                <label for="">Task Title</label>
-                <input type="text" th:field="*{title}" />
+                <label for="tTitle">Task Title</label>
+                <input id="tTitle" type="text" th:field="*{title}" />
 
-                <label for="">Task Number</label>
-                <input type="text" th:field="*{order}" />
+                <label for="tOrder">Task Number</label>
+                <input id="tOrder" type="text" th:field="*{order}" />
 
-                <label for="">Task Description</label>
-                <input type="text" th:field="*{description}" />
+                <label for="tDescription">Task Description</label>
+                <input id="tDescription" type="text" th:field="*{description}" />
                 <button class="btn btn-primary">Next Step</button>
             </form>
         </div>
