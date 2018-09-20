@@ -7,6 +7,5 @@ import org.springframework.data.repository.CrudRepository;
 
 @Repository
 public interface ProjectsRepo extends CrudRepository<Project, Long> {
-    Project findAllByTitle(String title);
 
 }

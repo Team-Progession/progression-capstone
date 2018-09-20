@@ -2,45 +2,58 @@ package com.progression.progressioncapstone.Controllers;
 
 import com.progression.progressioncapstone.Models.Project;
 import com.progression.progressioncapstone.Repositories.ProjectsRepo;
+import com.progression.progressioncapstone.Repositories.Users;
 import org.springframework.ui.Model;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class ProjectController {
-     private final ProjectsRepo project;
+     ProjectsRepo projectsRepo;
+     Users users;
 
-    public ProjectController(ProjectsRepo project) {
-        this.project = project;
+    public ProjectController(ProjectsRepo projectsRepo, Users users) {
+        this.projectsRepo = projectsRepo;
+        this.users = users;
     }
 
     @GetMapping("/project")
     public String index(Model model){
-        model.addAttribute("project", project.findAll());
-        return "project/index";
+        model.addAttribute("project", projectsRepo.findAll());
+        return "home";
     }
 
     @GetMapping("/project/{id}")
     public String show(@PathVariable long id, Model model){
-        model.addAttribute("project", project.findOne(id));
-        return "project/show";
+        model.addAttribute("project", projectsRepo.findOne(id));
+        return "projects/project-index";
     }
 
 
-    @GetMapping("/project/create")
+    @GetMapping("/create")
     public String createForm(Model model){
         model.addAttribute("project", new Project());
-        return "project/create";
+        return "projects/project-create";
+    }
+
+    @PostMapping("/create")
+    public String insertProject(@ModelAttribute Project project){
+        projectsRepo.save(project);
+        return "redirect:/project-index";
     }
 
     @GetMapping("/project/{id}/edit")
     public String projectEditForm(@PathVariable long id, Model model ){
-        model.addAttribute("project", project.findAll());
-        return "project/edit";
+        model.addAttribute("project", projectsRepo.findOne(id));
+        return "projects/project-edit";
 
     }
 
+    @PostMapping("/project/{id}/edit")
+    public String updateProject(@ModelAttribute Project project){
+        projectsRepo.save(project);
+        return "redirect:/project";
+    }
 
 }
 
