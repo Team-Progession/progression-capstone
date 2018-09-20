@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head th:replace="fragments/head :: head('Project Details')"></head>
+<!--<head th:replace="fragments/head :: head('Project Details')"></head>-->
 <body>
 <nav th:replace="fragments/navbar :: navbar"></nav>
     <div>
@@ -15,30 +15,30 @@
                         <label for="pDate">Projected Completion Date</label>
                         <input id="pDate" type="text" th:field="*{date}" />
 
-                        <label for="pDescription">Project Sumarry</label>
+                        <label for="pDescription">Project Summary</label>
                         <input id="pDescription" type="text" th:field="*{description}" />
-
+                        <button class="btn btn-primary" type="submit">Submit</button>
                     </form>
                 </div>
 
-                <div>
-                    <form th:method="post" th:object="${task}">
+                <!--<div>-->
+                    <!--<form th:method="post" th:object="${tasks}">-->
 
-                        <label for="tTitle">Task Title</label>
-                        <input id="tTitle" type="text" th:field="*{title}" />
+                        <!--<label for="tTitle">Task Title</label>-->
+                        <!--<input id="tTitle" type="text" th:field="${tasks.title}" />-->
 
-                        <label for="tOrder">Task Number</label>
-                        <input id="tOrder" type="text" th:field="*{order}" />
+                        <!--<label for="tOrder">Task Number</label>-->
+                        <!--<input id="tOrder" type="text" th:field="${tasks.order}" />-->
 
-                        <label for="tDescription">Task Description</label>
-                        <input id="tDescription" type="text" th:field="*{description}" />
-                        <button class="btn btn-primary">Next Step</button>
-                    </form>
-                </div>
+                        <!--<label for="tDescription">Task Description</label>-->
+                        <!--<input id="tDescription" type="text" th:field="${tasks.description}" />-->
+                        <!--<button class="btn btn-primary">Next Step</button>-->
+                    <!--</form>-->
+                <!--</div>-->
             </div>
-        <button class="btn btn-primary">Submit</button>
-        </div>
+
     </div>
+
 </body>
 
 
