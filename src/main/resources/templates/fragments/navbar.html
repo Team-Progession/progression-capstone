@@ -6,7 +6,7 @@
 </head>
 <body>
 <nav th:fragment="navbar">
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-inverse navbar-static-top">
         <div class="container-fluid">
             <div class="navbar-header">
                 <div class="navbar-brand" href="/">Progression</div>
@@ -17,14 +17,25 @@
                 <li><a href="/create">Create a Project</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="/register"><span class="glyphicon glyphicon-user"></span> Register</a></li>
-                <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                <form th:action="@{/logout}" th:method="post">
-                    <button class="dropdown-item" style="color: red; cursor: pointer">Logout</button>
-                </form>
+                <li class="nav-item">
+                    <a href="/register"><span class="glyphicon glyphicon-user"></span> Register</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+                </li>
+                <li class="nav-item">
+                    <form th:action="@{/logout}" th:method="post">
+                        <button class="btn btn-link glyphicon glyphicon-log-in" style="">Logout</button>
+                    </form>
+                </li>
             </ul>
         </div>
     </nav>
+</nav>
+<nav th:fragment="navbar2">
+
+
+
 </nav>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
