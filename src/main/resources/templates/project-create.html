@@ -5,21 +5,37 @@
 <nav th:replace="fragments/navbar :: navbar"></nav>
     <div>
         <h1>Create Project</h1>
-            <!---->
+            <div>
+                <div>
+                    <form th:action="create" th:method="post" th:object="${project}">
+
+                        <label for="pTitle">Name of Project</label>
+                        <input id="pTitle" type="text" th:field="*{title}" />
+
+                        <label for="pDate">Projected Completion Date</label>
+                        <input id="pDate" type="text" th:field="*{date}" />
+
+                        <label for="pDescription">Project Summary</label>
+                        <input id="pDescription" type="text" th:field="*{description}" />
+                        <button class="btn btn-primary" type="submit">Submit</button>
+                    </form>
+                </div>
+
                 <!--<div>-->
-                    <!--<form th:action="create" th:method="post" th:object="${project}">-->
+                    <!--<form th:method="post" th:object="${tasks}">-->
 
-                        <!--<label for="pTitle">Name of Project</label>-->
-                        <!--<input id="pTitle" type="text" th:field="*{title}" />-->
+                        <!--<label for="tTitle">Task Title</label>-->
+                        <!--<input id="tTitle" type="text" th:field="${tasks.title}" />-->
 
-                        <!--<label for="pDate">Projected Completion Date</label>-->
-                        <!--<input id="pDate" type="text" th:field="*{date}" />-->
+                        <!--<label for="tOrder">Task Number</label>-->
+                        <!--<input id="tOrder" type="text" th:field="${tasks.order}" />-->
 
-                        <!--<label for="pDescription">Project Summary</label>-->
-                        <!--<input id="pDescription" type="text" th:field="*{description}" />-->
-                        <!--<button class="btn btn-primary" type="submit">Submit</button>-->
+                        <!--<label for="tDescription">Task Description</label>-->
+                        <!--<input id="tDescription" type="text" th:field="${tasks.description}" />-->
+                        <!--<button class="btn btn-primary">Next Step</button>-->
                     <!--</form>-->
                 <!--</div>-->
+            </div>
 
     </div>
 
