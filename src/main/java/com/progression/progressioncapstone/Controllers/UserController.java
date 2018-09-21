@@ -1,6 +1,7 @@
 package com.progression.progressioncapstone.Controllers;
 
 import com.progression.progressioncapstone.Models.User;
+import com.progression.progressioncapstone.Repositories.ProjectsRepo;
 import com.progression.progressioncapstone.Repositories.Users;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -14,10 +15,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class UserController {
     private Users users;
     private PasswordEncoder passwordEncoder;
+    private ProjectsRepo projectsRepo;
 
-    public UserController(Users users, PasswordEncoder passwordEncoder) {
+    public UserController(Users users, PasswordEncoder passwordEncoder, ProjectsRepo projectsRepo) {
         this.users = users;
         this.passwordEncoder = passwordEncoder;
+        this.projectsRepo = projectsRepo;
     }
 
     @GetMapping("/register")
@@ -36,6 +39,7 @@ public class UserController {
 
     @GetMapping("/profile")
     public String showProfile(Model model){
+        model.addAttribute("projects", projectsRepo.findAll());
         model.addAttribute("user", SecurityContextHolder.getContext().getAuthentication().getPrincipal());
         return "users/profile";
     }

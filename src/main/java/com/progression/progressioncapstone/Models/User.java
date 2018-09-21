@@ -31,7 +31,7 @@ public class User {
     @Column(nullable = false, unique = true)
     private String username;
 
-    @OneToMany(mappedBy = "owner")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
     private List<Project> projectsOwned;
 
     @OneToMany(mappedBy = "user")

@@ -1,14 +1,16 @@
 package com.progression.progressioncapstone.Controllers;
 
-import com.progression.progressioncapstone.Models.Project;
+import com.progression.progressioncapstone.Models.*;
 import com.progression.progressioncapstone.Repositories.ProjectsRepo;
 import com.progression.progressioncapstone.Repositories.Users;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.ui.Model;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import sun.plugin.liveconnect.SecurityContextHelper;
 
 @Controller
 public class ProjectController {
@@ -41,14 +43,15 @@ public class ProjectController {
 
     @PostMapping("/create")
     public String insertProject(@ModelAttribute Project project){
+        project.setOwner((User) SecurityContextHolder.getContext().getAuthentication().getPrincipal());
         projectsRepo.save(project);
-        return "redirect:/project-index";
+        return "redirect:/profile";
     }
 
     @GetMapping("/project/{id}/edit")
     public String projectEditForm(@PathVariable long id, Model model ){
         model.addAttribute("project", projectsRepo.findOne(id));
-        return "project/edit";
+        return "project-edit";
 
     }
 
