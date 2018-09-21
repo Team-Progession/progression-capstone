@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<!--<head th:replace="fragments/head :: head('Project Details')"></head>-->
+<head th:replace="fragments/head :: head"></head>
 <body>
 <nav th:replace="fragments/navbar :: navbar"></nav>
     <div>
         <h1>Create Project</h1>
             <div>
                 <div>
-                    <form th:method="post" th:object="${project}">
+                    <form th:action="create" th:method="post" th:object="${project}">
 
                         <label for="pTitle">Name of Project</label>
                         <input id="pTitle" type="text" th:field="*{title}" />

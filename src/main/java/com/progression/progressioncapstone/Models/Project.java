@@ -41,10 +41,11 @@ public class Project {
         this.owner = owner;
     }
 
-    public Project(String title, String description, String date){
+    public Project(String title, String description, String date, User owner){
         this.title = title;
         this.description = description;
         this.date = date;
+        this.owner = owner;
     }
 
     @Override
