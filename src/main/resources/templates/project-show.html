@@ -5,7 +5,7 @@
 </head>
 <nav th:replace="fragments/navbar :: navbar"></nav>
 <body>
-    <div class="jumbotron">
+    <div>
         <div th:each="project : ${projects}" value="Project name">
             <h2 th:text="${project.title}" value="Project name"></h2>
             <p th:text="${project.description}"></p>
@@ -30,26 +30,26 @@
 </div>
 
 
-<div id="users-contain" class="ui-widget">
+<div id="tasks-contain" class="ui-widget">
     <h1>Existing Users:</h1>
-    <table id="users" class="ui-widget ui-widget-content">
-        <thead>
-        <tr class="ui-widget-header ">
-            <th>Name</th>
-            <th>Email</th>
-            <th>Password</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>John Doe</td>
-            <td>john.doe@example.com</td>
-            <td>johndoe1</td>
-        </tr>
-        </tbody>
-    </table>
+    <div id="users" class="ui-widget ui-widget-content">
+        <div>
+        <div class="ui-widget-header ">
+            <div>Name</div>
+            <div>Email</div>
+            <div>Password</div>
+        </div>
+        </div>
+        <div>
+        <div>
+            <div>John Doe</div>
+            <div>john.doe@example.com</div>
+            <div>johndoe1</div>
+        </div>
+        </div>
+    </div>
 </div>
-<button id="create-user">Create new user</button>
+<button id="create-task">Create new user</button>
 
 
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -95,8 +95,8 @@
                 return true;
             }
         }
-
-        function addUser() {
+//Used for adding task to page
+        function addTask() {
             var valid = true;
             allFields.removeClass( "ui-state-error" );
 
@@ -109,11 +109,9 @@
             valid = valid && checkRegexp( password, /^([0-9a-zA-Z])+$/, "Password field only allow : a-z 0-9" );
 
             if ( valid ) {
-                $( "#users tbody" ).append( "<tr>" +
-                    "<td>" + name.val() + "</td>" +
-                    "<td>" + email.val() + "</td>" +
-                    "<td>" + password.val() + "</td>" +
-                    "</tr>" );
+                $( "#tasks-contain" ).append(name.val() + "<br/> " +
+                    " " + email.val() + " " +
+                    " " + password.val() );
                 dialog.dialog( "close" );
             }
             return valid;
@@ -125,7 +123,7 @@
             width: 350,
             modal: true,
             buttons: {
-                "Create an account": addUser,
+                "Create a task": addTask,
                 Cancel: function() {
                     dialog.dialog( "close" );
                 }
@@ -141,7 +139,7 @@
             addUser();
         });
 
-        $( "#create-user" ).button().on( "click", function() {
+        $( "#create-task" ).button().on( "click", function() {
             dialog.dialog( "open" );
         });
     } );
