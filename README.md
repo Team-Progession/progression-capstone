@@ -8,7 +8,7 @@
   - [X] Register as a new user
   - [X] Access Login Page
   - [X] Login as a preexsisting user
-  - [ ] View Profile Page as a logged in user
+  - [X] View Profile Page as a logged in user
   - [ ] Access Create New Project Page
   - [ ] Create projects and tasks
   - [ ] View details of a project and tasks
