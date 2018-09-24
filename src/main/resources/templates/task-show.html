@@ -1,46 +1,71 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/head :: head">
 
 </head>
+
 <body>
 <nav th:replace="fragments/navbar :: navbar"></nav>
-
-    <div>
-        <div th:each="project : ${projects}" value="Project name">
-            <h2 th:text="*{title}" value="Project name"></h2>
-            <p th:text="*{description}"></p>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+        Add a Task
+    </button>
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Add a task</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" th:action="@{/task}" th:method="post" th:object="${task}">
+                    <input type="text" name="title" th:field="*{title}" />
+                    <input type="text" name="title" th:field="*{description}" />
+                    <input type="text" name="title" th:field="*{taskOrder}" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" data-dismiss="modal">Submit</button>
+                </div>
+            </div>
         </div>
     </div>
-    <div id="dialog-form" title="Create new task">
-        <p class="validateTips">All form fields are required.</p>
+    <!--<div id="dialog-form" title="Create new task">-->
+        <!--<p class="validateTips">All form fields are required.</p>-->
 
-        <form th:action="task" th:method="post" th:object="${task}">
-            <fieldset>
-                <label for="title">Task Title</label><br/>
-                <input type="text" name="title" id="title" value="" class="text ui-widget-content ui-corner-all" /><br/>
-                <label for="description">Description</label><br/>
-                <input type="text" name="description" id="description" value="" class="text ui-widget-content ui-corner-all" /><br/>
-                <label for="assign">Assign Task to:</label><br/>
-                <input type="text" name="assign" id="assign" value="" class="text ui-widget-content ui-corner-all" /><br/>
-                <label for="order">Order</label><br/>
-                <input type="number" name="order" id="order" value="" class="text ui-widget-content ui-corner-all" /><br/>
-                <!-- Allow form submission with keyboard without duplicating the dialog button -->
-                <input type="submit" tabindex="-1" style="position:absolute; top:-1000px" />
-            </fieldset>
-        </form>
-    </div>
-
+        <!--<form th:action="@{/task}" th:method="post" th:object="${task}">-->
+            <!--<fieldset>-->
+                <!--<label for="title">Task Title</label>-->
+                <!--<input type="text" name="title" th:field="*{title}" id="title" value="" class="text ui-widget-content ui-corner-all" />-->
+                <!--<label for="description">Description</label>-->
+                <!--<input type="text" th:field="*{description}" name="description" id="description" value="" class="text ui-widget-content ui-corner-all" />-->
+                <!--<label for="assign">Assign Task to:</label>-->
+                <!--<input type="text" name="assign" id="assign" value="" class="text ui-widget-content ui-corner-all" />-->
+                <!--<label for="order">Order</label>-->
+                <!--<input type="number" th:field="*{taskOrder}" name="order" id="order" value="" class="text ui-widget-content ui-corner-all" />-->
+                <!--&lt;!&ndash; Allow form submission with keyboard without duplicating the dialog button &ndash;&gt;-->
+                <!--<input type="submit" tabindex="-1" />-->
+            <!--</fieldset>-->
+        <!--</form>-->
+    <!--</div>-->
+<!--<div>-->
+    <!--<div th:each="project : ${projects}">-->
+        <!--<h2 th:text="${project.title}"></h2>-->
+        <!--<p th:text="${project.description}"></p>-->
+    <!--</div>-->
+<!--</div>-->
 
 <div id="tasks-contain" class="ui-widget">
     <h1>Project Tasks:</h1>
 
 </div>
-<button id="create-task">Create new task</button>
+
+
+
 
 
 <footer th:replace="fragments/footer :: footer"></footer>
-<script src="js/main.js"></script>
+<!--<script src="js/main.js"></script>-->
 
 </body>
 </html>

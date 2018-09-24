@@ -35,6 +35,6 @@ public class TaskController {
     @PostMapping("/task")
     public String insertProject(@ModelAttribute Task task){
         tasksRepo.save(task);
-        return "redirect:/profile";
+        return "redirect:/task";
     }
 }
