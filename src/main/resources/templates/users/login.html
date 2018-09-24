@@ -2,8 +2,9 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head th:replace="fragments/head :: head"></head>
-<nav th:replace="fragments/navbar :: navbar"></nav>
 <body>
+<nav th:replace="fragments/navbar :: navbar"></nav>
+
 <div class="row">
     <h1>Login Page</h1>
     <form th:action="@{/login}" method="post" >
