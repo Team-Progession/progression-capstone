@@ -2,12 +2,14 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head th:replace="fragments/head :: head"></head>
 
-<nav th:replace="fragments/navbar :: navbar"></nav>
 <body>
+<nav th:replace="fragments/navbar :: navbar"></nav>
+
 <h1>Current Projects</h1>
 <div th:each="project : ${projects}">
     <h2 th:text="${project.title}"></h2>
     <p th:text="${project.description}"></p>
+    <a class="btn btn-primary" href="/task">Add Tasks</a>
 </div>
 
 </body>

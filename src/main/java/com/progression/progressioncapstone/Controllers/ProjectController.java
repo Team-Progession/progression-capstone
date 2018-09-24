@@ -38,7 +38,7 @@ public class ProjectController {
     @GetMapping("/create")
     public String createForm(Model model){
         model.addAttribute("project", new Project());
-        return "/project-create";
+        return "project-create";
     }
 
     @PostMapping("/create")
