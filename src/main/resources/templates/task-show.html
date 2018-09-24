@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head th:replace="fragments/head :: head">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
 </head>
-<nav th:replace="fragments/navbar :: navbar"></nav>
 <body>
+<nav th:replace="fragments/navbar :: navbar"></nav>
+
     <div>
         <div th:each="project : ${projects}" value="Project name">
             <h2 th:text="${project.title}" value="Project name"></h2>
@@ -14,22 +15,22 @@
     <div id="dialog-form" title="Create new task">
         <p class="validateTips">All form fields are required.</p>
 
-    <form>
-        <fieldset>
-            <label for="title">Task Title</label>
-            <input type="text" name="title" id="title" value="" class="text ui-widget-content ui-corner-all" />
-            <label for="description">Description</label>
-            <input type="text" name="description" id="description" value="" class="text ui-widget-content ui-corner-all" />
-            <label for="assign">Assign Task to:</label>
-            <input type="text" name="assign" id="assign" value="" class="text ui-widget-content ui-corner-all" />
-            <label for="order">Order</label>
-            <input type="number" name="order" id="order" value="" class="text ui-widget-content ui-corner-all" />
-            <input type="hidden" id="is_complete">
-            <!-- Allow form submission with keyboard without duplicating the dialog button -->
-            <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
-        </fieldset>
-    </form>
-</div>
+        <form th:action="task" th:method="post" th:object="${task}">
+            <fieldset>
+                <label for="title">Task Title</label>
+                <input type="text" name="title" id="title" value="" class="text ui-widget-content ui-corner-all" />
+                <label for="description">Description</label>
+                <input type="text" name="description" id="description" value="" class="text ui-widget-content ui-corner-all" />
+                <label for="assign">Assign Task to:</label>
+                <input type="text" name="assign" id="assign" value="" class="text ui-widget-content ui-corner-all" />
+                <label for="order">Order</label>
+                <input type="number" name="order" id="order" value="" class="text ui-widget-content ui-corner-all" />
+                <input type="hidden" id="is_complete" />
+                <!-- Allow form submission with keyboard without duplicating the dialog button -->
+                <input type="submit" tabindex="-1" style="position:absolute; top:-1000px" />
+            </fieldset>
+        </form>
+    </div>
 
 
 <div id="tasks-contain" class="ui-widget">
@@ -39,8 +40,7 @@
 <button id="create-task">Create new task</button>
 
 
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 <script>
     $( function() {
         var dialog, form,
