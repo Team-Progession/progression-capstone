@@ -16,7 +16,7 @@
 <div th:each="project : ${projects}">
     <h2 th:text="${project.title}"></h2>
     <p th:text="${project.description}"></p>
-    <a class="btn btn-primary" href="/task">Add Tasks</a>
+    <a class="btn btn-primary" th:href="@{/task/{project}(project=${project.id})}">Add Tasks</a>
 </div>
 
 </body>
