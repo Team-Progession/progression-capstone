@@ -3,8 +3,9 @@
 <head th:replace="fragments/head :: head">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 </head>
-<nav th:replace="fragments/navbar :: navbar"></nav>
 <body>
+<nav th:replace="fragments/navbar :: navbar"></nav>
+
     <div>
         <div th:each="project : ${projects}" value="Project name">
             <h2 th:text="${project.title}" value="Project name"></h2>
