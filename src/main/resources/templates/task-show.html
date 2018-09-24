@@ -2,14 +2,15 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head th:replace="fragments/head :: head">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+    <link rel="stylesheet" href="/css/main.css"/>
 </head>
 <body>
 <nav th:replace="fragments/navbar :: navbar"></nav>
 
     <div>
         <div th:each="project : ${projects}" value="Project name">
-            <h2 th:text="${project.title}" value="Project name"></h2>
-            <p th:text="${project.description}"></p>
+            <h2 th:text="*{title}" value="Project name"></h2>
+            <p th:text="*{description}"></p>
         </div>
     </div>
     <div id="dialog-form" title="Create new task">
@@ -17,15 +18,14 @@
 
         <form th:action="task" th:method="post" th:object="${task}">
             <fieldset>
-                <label for="title">Task Title</label>
-                <input type="text" name="title" id="title" value="" class="text ui-widget-content ui-corner-all" />
-                <label for="description">Description</label>
-                <input type="text" name="description" id="description" value="" class="text ui-widget-content ui-corner-all" />
-                <label for="assign">Assign Task to:</label>
-                <input type="text" name="assign" id="assign" value="" class="text ui-widget-content ui-corner-all" />
-                <label for="order">Order</label>
-                <input type="number" name="order" id="order" value="" class="text ui-widget-content ui-corner-all" />
-                <input type="hidden" id="is_complete" />
+                <label for="title">Task Title</label><br/>
+                <input type="text" name="title" id="title" value="" class="text ui-widget-content ui-corner-all" /><br/>
+                <label for="description">Description</label><br/>
+                <input type="text" name="description" id="description" value="" class="text ui-widget-content ui-corner-all" /><br/>
+                <label for="assign">Assign Task to:</label><br/>
+                <input type="text" name="assign" id="assign" value="" class="text ui-widget-content ui-corner-all" /><br/>
+                <label for="order">Order</label><br/>
+                <input type="number" name="order" id="order" value="" class="text ui-widget-content ui-corner-all" /><br/>
                 <!-- Allow form submission with keyboard without duplicating the dialog button -->
                 <input type="submit" tabindex="-1" style="position:absolute; top:-1000px" />
             </fieldset>
@@ -41,80 +41,7 @@
 
 
 <footer th:replace="fragments/footer :: footer"></footer>
-<!--<th:script>-->
-    <!--$( function() {-->
-        <!--var dialog, form,-->
-
-            <!--title = $( "#title" ),-->
-            <!--description = $( "#description" ),-->
-            <!--assign = $( "#assign"),-->
-            <!--order = $( "#order"),-->
-            <!--allFields = $( [] ).add( title ).add( description ).add( assign ).add( order ),-->
-            <!--tips = $( ".validateTips" );-->
-
-        <!--function updateTips( t ) {-->
-            <!--tips-->
-                <!--.text( t )-->
-                <!--.addClass( "ui-state-highlight" );-->
-            <!--setTimeout(function() {-->
-                <!--tips.removeClass( "ui-state-highlight", 1500 );-->
-            <!--}, 500 );-->
-        <!--}-->
-
-        <!--function checkLength( o, n, min, max ) {-->
-            <!--if ( o.val().length > max || o.val().length < min ) {-->
-                <!--o.addClass( "ui-state-error" );-->
-                <!--updateTips( "Length of " + n + " must be between " +-->
-                    <!--min + " and " + max + "." );-->
-                <!--return false;-->
-            <!--} else {-->
-                <!--return true;-->
-            <!--}-->
-        <!--}-->
-
-        <!--function addTask() {-->
-            <!--var valid = true;-->
-            <!--allFields.removeClass( "ui-state-error" );-->
-
-            <!--valid = valid && checkLength( title, "title", 3, 100 );-->
-            <!--valid = valid && checkLength( description, "description", 6, 250 );-->
-            <!--valid = valid && checkLength( order, "order", 1, 500);-->
-
-            <!--if ( valid ) {-->
-                <!--$( "#tasks-contain" ).append("Title: "+ title.val() + "<br/> " +-->
-                    <!--"Description: " + description.val() + "<br/>" + "Assignee: " + assign.val() + "<br/>" + "Task Order: " + order.val() +"<br/>");-->
-                <!--dialog.dialog( "close" );-->
-            <!--}-->
-            <!--return valid;-->
-        <!--}-->
-
-        <!--dialog = $( "#dialog-form" ).dialog({-->
-            <!--autoOpen: false,-->
-            <!--height: 400,-->
-            <!--width: 350,-->
-            <!--modal: true,-->
-            <!--buttons: {-->
-                <!--"Create a task": addTask,-->
-                <!--Cancel: function() {-->
-                    <!--dialog.dialog( "close" );-->
-                <!--}-->
-            <!--},-->
-            <!--close: function() {-->
-                <!--form[ 0 ].reset();-->
-                <!--allFields.removeClass( "ui-state-error" );-->
-            <!--}-->
-        <!--});-->
-
-        <!--form = dialog.find( "form" ).on( "submit", function( event ) {-->
-            <!--event.preventDefault();-->
-            <!--addTask();-->
-        <!--});-->
-
-        <!--$( "#create-task" ).button().on( "click", function() {-->
-            <!--dialog.dialog( "open" );-->
-        <!--});-->
-    <!--} );-->
-<!--</th:script>-->
+<script src="js/main.js"></script>
 
 </body>
 </html>
