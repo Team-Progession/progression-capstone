@@ -16,3 +16,42 @@ div#tasks-contain table td, div#users-contain table th {
     padding: .3em; }
 .validateTips {
     border: 1px solid transparent; padding: 0.3em; }
+body {
+    font-family: 'Teko', sans-serif;
+}
+body.home {
+    background-image: -webkit-linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("../img/road.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 1175px;
+    width: 100%;
+    font-family: 'Teko', sans-serif;
+
+
+}
+
+hr {
+    background: white 25px;
+    width: 50%;
+}
+
+.home-container {
+    margin-top: 10%;
+}
+
+.home-text1 {
+    top: 25%;
+    color: white;
+    font-size: 80px;
+    text-align: center;
+}
+
+.home-text2 {
+    top: 25%;
+    color: white;
+    font-size: 40px;
+    text-align: center;
+}
+
+
