@@ -1,30 +1,27 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/head :: head"></head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <body>
-<nav th:replace="fragments/navbar :: navbar"></nav>
-<h1>Create an account</h1>
-<form th:action="@{/register}" method="POST" th:object="${user}">
 
-    <label for="username">Username</label>
-    <input id="username" th:field="*{username}" />
+        <div>
+            <h1>Create Project</h1>
+                <div>
+                    <form th:action="create" th:method="post" th:object="${project}">
 
-    <label for="password">Password</label>
-    <input id="password" type="password" th:field="*{password}" />
+                        <label for="pTitle">Name of Project</label>
+                        <input id="pTitle" type="text" th:field="*{title}" />
 
-    <label for="firstname">First Name</label>
-    <input id="firstname" th:field="*{firstName}" />
+                        <label for="pDate">Projected Completion Date</label>
+                        <input id="pDate" type="text" th:field="*{date}" />
 
-    <label for="lastname">Last Name</label>
-    <input id="lastname" th:field="*{lastName}" />
-
-    <label for="email">Email</label>
-    <input id="email" th:field="*{email}" />
-
-
-    <input value="Sign me up!" type="submit" />
-</form>
+                        <label for="pDescription">Project Summary</label>
+                        <input id="pDescription" type="text" th:field="*{description}" />
+                        <button class="btn btn-primary" type="submit">Submit</button>
+                    </form>
+                </div>
+        </div>
 
 </body>
+
+
 </html>
