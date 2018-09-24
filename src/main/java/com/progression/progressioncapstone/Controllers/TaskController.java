@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -26,15 +27,21 @@ public class TaskController {
         this.tasksRepo = tasksRepo;
     }
 
-    @GetMapping("/task")
-    public String createForm(Model model){
+    @GetMapping("/task/{projectId}")
+    public String createForm(@PathVariable long projectId, Model model){
+        Project project = projectsRepo.findOne(projectId);
+        model.addAttribute("project", project);
         model.addAttribute("task", new Task());
+        model.addAttribute("tasks", project.getTasks());
+        System.out.println(project.getTasks());
         return "task-show";
     }
 
-    @PostMapping("/task")
-    public String insertProject(@ModelAttribute Task task){
+    @PostMapping("/task/{projectId}")
+    public String insertProject(@PathVariable long projectId, @ModelAttribute Task task){
+        Project project = projectsRepo.findOne(projectId);
+        task.setProject(project);
         tasksRepo.save(task);
-        return "redirect:/task";
+        return "redirect:/task/" + projectId;
     }
 }
