@@ -37,7 +37,7 @@ hr {
 }
 
 .home-container {
-    margin-top: 10%;
+    margin-top: 12%;
 
 }
 
@@ -46,21 +46,29 @@ hr {
     color: white;
     font-size: 80px;
     text-align: center;
+    text-shadow: 2px 2px 100px #000000;
 }
-
+.line {
+    text-shadow: 2px 2px 100px #000000;
+}
 .home-text2 {
     top: 25%;
     color: white;
     font-size: 40px;
     text-align: center;
+    text-shadow: 2px 2px 8px #000000;
 }
 
 body.login-screen {
     padding: 0;
     margin: 0;
     background-image: url("../img/buildings.jpeg");
+    background-attachment: fixed;
     font-family: 'Teko', sans-serif;
+    font-size: medium;
     color: white;
+    overflow-x: hidden;
+    overflow-y: auto;
 
 }
 
@@ -70,11 +78,15 @@ body.register{
     background-image: url("../img/buildings.jpeg");
     font-family: 'Teko', sans-serif;
     color: white;
+    font-size: medium;
+
 }
 .vid-container {
     position: relative;
     height: 100vh;
     overflow: hidden;
+    text-shadow: 2px 2px 8px #000000;
+
 }
 .bgvid {
     position: absolute;
@@ -86,7 +98,7 @@ body.register{
     width: 400px;
     height: 400px;
     position: absolute;
-    top: calc(50vh - 200px);
+    top: calc(37vh - 200px);
     left: calc(50vw - 200px);
     overflow: hidden;
 }
