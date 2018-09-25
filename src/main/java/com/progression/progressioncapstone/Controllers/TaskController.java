@@ -7,13 +7,9 @@ import com.progression.progressioncapstone.Repositories.ProjectsRepo;
 import com.progression.progressioncapstone.Repositories.TasksRepo;
 import com.progression.progressioncapstone.Repositories.Users;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class TaskController {
@@ -29,10 +25,14 @@ public class TaskController {
 
     @GetMapping("/task/{projectId}")
     public String createForm(@PathVariable long projectId, Model model){
+        User loggedInUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        boolean isLoggedIn = loggedInUser != null;
         Project project = projectsRepo.findOne(projectId);
         model.addAttribute("project", project);
         model.addAttribute("task", new Task());
         model.addAttribute("tasks", project.getTasks());
+        model.addAttribute("isLoggedIn", isLoggedIn);
+        model.addAttribute("loggedInUser", loggedInUser);
         System.out.println(project.getTasks());
         return "task-show";
     }
@@ -41,6 +41,16 @@ public class TaskController {
     public String insertProject(@PathVariable long projectId, @ModelAttribute Task task){
         Project project = projectsRepo.findOne(projectId);
         task.setProject(project);
+        tasksRepo.save(task);
+        return "redirect:/task/" + projectId;
+    }
+
+    @PostMapping("/task/setComplete/{taskId}/{projectId}")
+    public String setComplete(@PathVariable long taskId, @PathVariable long projectId) {
+        System.out.println("get here");
+        Task task = tasksRepo.findOne(taskId);
+        System.out.println(task.getId());
+        task.setComplete(true);
         tasksRepo.save(task);
         return "redirect:/task/" + projectId;
     }

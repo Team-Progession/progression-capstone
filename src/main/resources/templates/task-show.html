@@ -15,15 +15,21 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Add a task</h5>
+                    <h5 class="modal-title bg-dark" id="exampleModalLongTitle">Add a task</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form class="task-body" th:action="@{/task/{projectId}(projectId=${project.id})}" th:method="post" th:object="${task}">
-                    <input type="text" name="title" th:field="*{title}" />
-                    <input type="text" name="description" th:field="*{description}" />
-                    <input type="number" name="taskOrder" th:field="*{taskOrder}" />
+                <form class="task-body form-group" th:action="@{/task/{projectId}(projectId=${project.id})}" th:method="post" th:object="${task}">
+                    <label for="title">Task Title: </label>
+                    <input type="text" id="title" class="form-control " name="title" th:field="*{title}" placeholder="Please enter a title for this task." required="required" />
+
+                    <label for="title">Description: </label>
+                    <input type="text" id="description" class="form-control" name="description" th:field="*{description}" placeholder="Please give detailed instructions for completing this task." required="required" />
+
+                    <label for="assignTo">Assign to: </label>
+                    <input type="text" id="assignTo" class="form-control" name="assignTo" PLACEHOLDER="Assign this task to someone." />
+
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         <input type="submit" class="btn btn-primary"  />
@@ -35,10 +41,19 @@
 
 <div>
     <h1>Project Tasks:</h1>
-        <div th:each="task : ${tasks}" class="container">
-            <div class="card-header bg-secondary" th:text="'title: ' + ${task.title}" />
-            <div class="card-body" th:text="'description: ' + ${task.description}" />
-            <div class="card-footer" th:text="'is complete: ' + ${task.isComplete()}" />
+        <div th:each="task : ${tasks}" class="container project-task">
+            <div class="row">
+                <div class="card-header bg-secondary" th:text="'title: ' + ${task.title}" />
+                <div class="card-body" th:text="'description: ' + ${task.description}" />
+                <div class="card-footer" th:text="'is complete: ' + ${task.isComplete()}" />
+                <form th:action="@{/task/setComplete/{taskId}/{projectId}(taskId=${task.id}, projectId=${project.id})}" method="post">
+                    <input type="submit" class="btn btn-primary" value="Sign Off" th:if="${not task.isComplete()}" onclick="style.display = 'none'" />
+                </form>
+
+                <!--<a class="btn btn-primary" th:href="@{/task/{projectId}(projectId=${project.id})}">Sign Off</a>-->
+
+
+            </div>
         </div>
 
 </div>
