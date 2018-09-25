@@ -2,28 +2,42 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/head :: head"></head>
 
-<body>
+<body class="register">
 <nav th:replace="fragments/navbar :: navbar"></nav>
-<h1>Create an account</h1>
 <form th:action="@{/register}" method="POST" th:object="${user}">
 
-    <label for="username">Username</label>
-    <input id="username" th:field="*{username}" />
+    <!--<label for="username">Username</label>-->
+    <!--<input id="username" th:field="*{username}" />-->
 
-    <label for="password">Password</label>
-    <input id="password" type="password" th:field="*{password}" />
+    <!--<label for="password">Password</label>-->
+    <!--<input id="password" type="password" th:field="*{password}" />-->
 
-    <label for="firstname">First Name</label>
-    <input id="firstname" th:field="*{firstName}" />
+    <!--<label for="firstname">First Name</label>-->
+    <!--<input id="firstname" th:field="*{firstName}" />-->
 
-    <label for="lastname">Last Name</label>
-    <input id="lastname" th:field="*{lastName}" />
+    <!--<label for="lastname">Last Name</label>-->
+    <!--<input id="lastname" th:field="*{lastName}" />-->
 
-    <label for="email">Email</label>
-    <input id="email" th:field="*{email}" />
+    <!--<label for="email">Email</label>-->
+    <!--<input id="email" th:field="*{email}" />-->
 
 
-    <input value="Sign me up!" type="submit" />
+    <!--<input value="Sign me up!" type="submit" />-->
+
+    <div class="vid-container animated fadeInUp">
+        <div class="inner-container2">
+            <div class="box">
+                <h1>Register</h1>
+                <input id="username" placeholder="Username" th:field="*{username}"/>
+                <input type="password" id="password" placeholder="Password" th:field="*{password}"/>
+                <input id="firstname" placeholder="First Name" th:field="*{firstName}" />
+                <input id="lastname" placeholder="Last Name" th:field="*{lastName}" />
+                <input id="email" placeholder="Email" th:field="*{email}" />
+                <button type="submit" id="login-submit" value="Sign me up!">Sign Me Up</button>
+
+            </div>
+        </div>
+    </div>
 </form>
 
 </body>
