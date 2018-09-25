@@ -39,8 +39,11 @@ public class UserController {
 
     @GetMapping("/profile")
     public String showProfile(Model model){
-        model.addAttribute("projects", projectsRepo.findAll());
-        model.addAttribute("user", SecurityContextHolder.getContext().getAuthentication().getPrincipal());
+        User loggedInUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User user = users.findOne(loggedInUser.getId());
+        model.addAttribute("projects", projectsRepo.findAllByOwner(user.getId()));
+        model.addAttribute("user", user);
         return "users/profile";
     }
+
 }

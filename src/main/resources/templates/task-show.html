@@ -35,14 +35,11 @@
 
 <div>
     <h1>Project Tasks:</h1>
-    <div>
-        <div th:each="task : ${tasks}">
-            <p th:text="'id: ' + ${task.id}" />
-            <p th:text="'title: ' + ${task.title}" />
-            <p th:text="'description: ' + ${task.description}" />
-            <p th:text="'is complete: ' + ${task.isComplete()}" />
+        <div th:each="task : ${tasks}" class="container">
+            <div class="card-header bg-secondary" th:text="'title: ' + ${task.title}" />
+            <div class="card-body" th:text="'description: ' + ${task.description}" />
+            <div class="card-footer" th:text="'is complete: ' + ${task.isComplete()}" />
         </div>
-    </div>
 
 </div>
 
