@@ -21,7 +21,7 @@ public class Task {
     private double taskOrder;
 
     @Column(nullable = false)
-    private boolean isComplete;
+    private boolean isComplete = false;
 
     @ManyToOne
     @JoinColumn(name = "project")
