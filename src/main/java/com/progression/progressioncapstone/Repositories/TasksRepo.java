@@ -7,4 +7,6 @@ import org.springframework.data.repository.CrudRepository;
 public interface TasksRepo extends CrudRepository <Task, Long> {
     Task findAllByTitle(String title);
 
+
+
 }

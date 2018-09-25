@@ -30,6 +30,10 @@ public class Task {
     public Task() {
     }
 
+    public Task(boolean isComplete) {
+        this.isComplete = isComplete;
+    }
+
     public Task(String title, String description, double taskOrder, boolean isComplete, Project project) {
         this.title = title;
         this.description = description;
