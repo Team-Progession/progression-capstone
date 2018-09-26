@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--<head th:replace="fragments/head :: head"></head>-->
+<!--<link href="https://fonts.googleapis.com/css?family=Teko" rel="stylesheet" />-->
+<!--<meta name="viewport" content="width=device-width, initial-scale=1" />-->
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />-->
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />-->
+<!--<link rel="stylesheet" href="/css/profile.css"/>-->
+
+<body>
+<div th:fragment="sidebar">
+<div class="animated fadeInLeft" id="left-content">
+    <div id="user-panel">
+        <div class="welcome">
+            <br/>
+            <span>Welcome</span>
+            <br/>
+            <span th:text="${user.firstName}"></span>
+        </div>
+        <hr />
+    </div>
+
+    <a href="/create" class="button">Create New Project</a>
+    <div id="lists-names" th:each="project : ${projects}">
+        <div id="lists-container">
+            <a th:href="@{/task/{project}(project=${project.id})}">
+                <div class="list">
+                    <div class="name" th:text="${project.title}"></div>
+                    <!--<div class="remaining" th:text="${task.}"></div>-->
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

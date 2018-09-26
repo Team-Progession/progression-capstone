@@ -28,6 +28,9 @@ public class TaskController {
         User loggedInUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         boolean isLoggedIn = loggedInUser != null;
         Project project = projectsRepo.findOne(projectId);
+        User user = users.findOne(loggedInUser.getId());
+        model.addAttribute("projects", projectsRepo.findAllByOwner(user.getId()));
+        model.addAttribute("user", user);
         model.addAttribute("project", project);
         model.addAttribute("task", new Task());
         model.addAttribute("tasks", project.getTasks());
