@@ -29,6 +29,8 @@ public class Project {
     @JoinColumn(name = "owner")
     private User owner;
 
+    private double progress;
+
     public Project() {
     }
 
@@ -39,6 +41,7 @@ public class Project {
         this.userlist = userlist;
         this.tasks = tasks;
         this.owner = owner;
+        setProgress();
     }
 
     public Project(String title, String description, String date, User owner){
@@ -46,6 +49,7 @@ public class Project {
         this.description = description;
         this.date = date;
         this.owner = owner;
+        setProgress();
     }
 
     @Override
@@ -107,6 +111,20 @@ public class Project {
 
     public void setOwner(User owner) {
         this.owner = owner;
+    }
+
+    public double getProgress(){
+        return this.progress;
+
+    }
+    public void setProgress(){
+        double completedTotal = 0;
+        for(int i = 0; i < this.tasks.size(); i++){
+            if(tasks.get(i).isComplete()){
+                completedTotal++;
+            }
+        }
+        this.progress = ((completedTotal/(double)this.tasks.size())*100);
     }
 }
 

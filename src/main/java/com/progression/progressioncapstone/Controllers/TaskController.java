@@ -36,7 +36,6 @@ public class TaskController {
         model.addAttribute("tasks", project.getTasks());
         model.addAttribute("isLoggedIn", isLoggedIn);
         model.addAttribute("loggedInUser", loggedInUser);
-        System.out.println(project.getTasks());
         return "task-show";
     }
 
@@ -50,9 +49,7 @@ public class TaskController {
 
     @PostMapping("/task/setComplete/{taskId}/{projectId}")
     public String setComplete(@PathVariable long taskId, @PathVariable long projectId) {
-        System.out.println("get here");
         Task task = tasksRepo.findOne(taskId);
-        System.out.println(task.getId());
         task.setComplete(true);
         tasksRepo.save(task);
         return "redirect:/task/" + projectId;
