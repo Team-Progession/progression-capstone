@@ -10,8 +10,8 @@
 <body>
 <nav th:replace="fragments/navbar :: navbar"></nav>
 
-<div th:replace="fragments/sidebar :: sidebar"></div>
 
+<div th:replace="fragments/sidebar :: sidebar"></div>
 
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
         Add a Task
@@ -54,10 +54,6 @@
                 <form th:action="@{/task/setComplete/{taskId}/{projectId}(taskId=${task.id}, projectId=${project.id})}" method="post">
                     <input type="submit" class="btn btn-primary" value="Sign Off" th:if="${not task.isComplete()}" onclick="style.display = 'none'" />
                 </form>
-
-                <!--<a class="btn btn-primary" th:href="@{/task/{projectId}(projectId=${project.id})}">Sign Off</a>-->
-
-
             </div>
         </div>
 
@@ -65,10 +61,22 @@
 
 
 
-
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
 <footer th:replace="fragments/footer :: footer"></footer>
+<script th:replace="fragments/scripts :: scripts"></script>
+<!--<script>-->
+    <!--$(function() {-->
+        <!--var current_progress = [[{}]];-->
+            <!--$("#dynamic")-->
+                <!--.css("width", current_progress + "%")-->
+                <!--.attr("aria-valuenow", current_progress)-->
+                <!--.text(current_progress + "% Complete");-->
+            <!--if (current_progress >= 100)-->
+                <!--clearInterval(interval);-->
 
+    <!--});-->
+<!--</script>-->
 
 </body>
 </html>
