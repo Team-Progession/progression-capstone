@@ -80,6 +80,10 @@ input:focus
     background-color: #f2f2f2;
 }
 
+.hidden {
+    display: none;
+}
+
 .button
 {
     display: inline-block;
