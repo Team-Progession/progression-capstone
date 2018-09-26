@@ -28,12 +28,14 @@ public class TaskController {
         User loggedInUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         boolean isLoggedIn = loggedInUser != null;
         Project project = projectsRepo.findOne(projectId);
+        project.setProgress();
+        System.out.println("project"+project.getProgress());
         model.addAttribute("project", project);
         model.addAttribute("task", new Task());
         model.addAttribute("tasks", project.getTasks());
         model.addAttribute("isLoggedIn", isLoggedIn);
         model.addAttribute("loggedInUser", loggedInUser);
-        System.out.println(project.getTasks());
+//        System.out.println(project.getTasks());
         return "task-show";
     }
 
@@ -47,9 +49,9 @@ public class TaskController {
 
     @PostMapping("/task/setComplete/{taskId}/{projectId}")
     public String setComplete(@PathVariable long taskId, @PathVariable long projectId) {
-        System.out.println("get here");
+//        System.out.println("get here");
         Task task = tasksRepo.findOne(taskId);
-        System.out.println(task.getId());
+//        System.out.println(task.getId());
         task.setComplete(true);
         tasksRepo.save(task);
         return "redirect:/task/" + projectId;

@@ -7,17 +7,18 @@
 <body>
 <nav th:replace="fragments/navbar :: navbar"></nav>
 
-<!--<h3>Dynamic Progress Bar</h3>-->
-<!--<div class="progress">-->
-    <!--<div id="dynamic" class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">-->
-        <!--<span id="current-progress"></span>-->
-    <!--</div>-->
-<!--</div>-->
+<h3>Dynamic Progress Bar</h3>
+<div class="progress">
+    <div id="dynamic" class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+        <span id="current-progress"></span>
+    </div>
+</div>
 
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
         Add a Task
     </button>
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" th:object="${project}">
+
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -51,7 +52,6 @@
             <div class="row">
                 <div class="card-header bg-secondary" th:text="'title: ' + ${task.title}" />
                 <div class="card-body" th:text="'description: ' + ${task.description}" />
-                <div class="card-footer" th:text="'is complete: ' + ${task.isComplete()}" />
                 <form th:action="@{/task/setComplete/{taskId}/{projectId}(taskId=${task.id}, projectId=${project.id})}" method="post">
                     <input type="submit" class="btn btn-primary" value="Sign Off" th:if="${not task.isComplete()}" onclick="style.display = 'none'" />
                 </form>
@@ -66,18 +66,19 @@
 
 <footer th:replace="fragments/footer :: footer"></footer>
 <script th:replace="fragments/scripts :: scripts"></script>
-<!--<script>-->
-    <!--$(function() {-->
-        <!--var current_progress = [[{}]];-->
-            <!--$("#dynamic")-->
-                <!--.css("width", current_progress + "%")-->
-                <!--.attr("aria-valuenow", current_progress)-->
-                <!--.text(current_progress + "% Complete");-->
-            <!--if (current_progress >= 100)-->
-                <!--clearInterval(interval);-->
+<script>
+    $(function() {
+        var current_progress = document.querySelector("#progress-percent").innerText;
+        console.log(current_progress);
+                // current_progress += 10;
+                $("#dynamic")
+                .css("width", current_progress + "%")
+                .attr("aria-valuenow", current_progress)
+                .text(parseFloat(current_progress).toFixed(0) + "% Complete");
 
-    <!--});-->
-<!--</script>-->
+
+    });
+</script>
 
 </body>
 </html>
