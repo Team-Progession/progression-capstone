@@ -15,6 +15,8 @@ body
     font-size: 25px;
     position: absolute; /* IE Fix */
     overflow-x: hidden;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 nav {
@@ -50,8 +52,14 @@ a
 {
     text-decoration: none;
 }
+.list-hr {
+    width: 95%;
+    top-margin: 5px;
+    color: black;
+    font-size: 5px;
+}
 
-hr {
+.side-hr {
     width: 95%;
     top-margin: 5px;
 
@@ -63,23 +71,29 @@ input
     display: inline-block;
     border: none;
     font-size: 25px;
-    background-color: #f6f6f6;
+    background-color: rgba(152,152,152,0.27);
     padding: 10px 10px;
     color: #a4a4a4;
     outline: none !important;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     border-radius: 2px;
-
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;
+
 }
 
 input:hover,
 input:focus
 {
     background-color: #f2f2f2;
+}
+
+#progress {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding-bottom: 5px;
+
 }
 
 .hidden {
@@ -253,7 +267,7 @@ div#left-content div#lists-names a.button
 div#main-content header,
 div#main-content div#new-task
 {
-    background-color: #FFF;
+    background-color: rgba(255, 255, 255, 0.65);
     /*padding: 20px 20px;*/
     margin-bottom: 25px;
 }
@@ -306,7 +320,7 @@ div#main-content div#new-task div#new-task-form div input
 div#tasks-list-container
 {
     padding: 0 20px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.65);
 }
 
 div#tasks-list-container ul#tasks-list

@@ -11,19 +11,6 @@
 <body class="profile">
 <nav th:replace="fragments/navbar :: navbar"></nav>
 
-    <!--vvv this populates as 'Hello null' onto the profile page. how to pull user firstName?-->
-<!--<h1 th:text="${'Hello ' + firstName}"></h1>-->
-
-
-<!--<div th:each="user : ${users}">-->
-    <!--<p th:text="${users.firstName}"></p>-->
-<!--</div>-->
-<!--<h1>Current Projects</h1>-->
-<!--<div th:each="project : ${projects}">-->
-    <!--<h2 th:text="${project.title}"></h2>-->
-    <!--<p th:text="${project.description}"></p>-->
-
-<!--</div>-->
 
 <div th:replace="fragments/sidebar :: sidebar"></div>
 <div  id="main-content">
@@ -39,40 +26,7 @@
 </div>
 </div>
 
-<!--<div class="animated fadeInUp"  id="main-content">-->
-    <!--<div class="list-name">-->
-        <!--<h1>project title</h1>-->
-    <!--</div>-->
 
-    <!--<div id="new-task">-->
-        <!--<form method="post" action="#">-->
-            <!--<div id="new-task-form">-->
-                <!--<div><input type="text" name="task-name" placeholder="Enter your new task..." /></div>-->
-                <!--<div ><input type="submit" name="action-task-add" class="button" value="Add Task"/></div>-->
-            <!--</div>-->
-        <!--</form>-->
-    <!--</div>-->
-    <!--<div id="tasks-list-container">-->
-        <!--<form method="post" action="">-->
-            <!--<ul id="tasks-list">-->
-                <!--<li>-->
-                    <!--<div class="status">To Do</div>-->
-                    <!--<input class="check-status" type="checkbox" name="task[]" />-->
-                    <!--<span>Create a really impressive interface</span>-->
-                <!--</li>-->
-                <!--<li>-->
-                    <!--<div class="status done">Done</div>-->
-                    <!--<input class="check-status" type="checkbox" name="task[]" />-->
-                    <!--<span>Show the world my HTML and CSS</span>-->
-                <!--</li>-->
-            <!--</ul>-->
-            <!--<div id="tasks-list-actions">-->
-                <!--<input type="submit" name="action-task-done" class="button" value="Mark as Done"/>-->
-                <!--<input type="submit" name="action-task-delete" class="button red" value="Delete Selected"/>-->
-            <!--</div>-->
-        <!--</form>-->
-    <!--</div>-->
-<!--</div>-->
 </body>
 <footer th:replace="fragments/footer :: footer" />
 
