@@ -220,3 +220,7 @@ a {
 .navbar {
     border-radius: 0;
 }
+
+.iBox {
+    text-shadow: 2px 2px 6px #000000;
+}
