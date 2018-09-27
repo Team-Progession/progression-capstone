@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
 <link rel="stylesheet" href="/css/profile.css"/>
+
 <link rel="stylesheet" href="/css/jump-to-top.css"/>
 <body>
 <nav th:replace="fragments/navbar :: navbar"></nav>
@@ -33,26 +34,36 @@
 
     <div id="new-task">
         <form  th:action="@{/task/{projectId}(projectId=${project.id})}" th:method="post" th:object="${task}">
-            <div id="new-task-form">
                 <div><input type="text" id="title" name="title" th:field="*{title}" placeholder="Please enter a title for this task." required="required" /></div>
                 <div><input type="text" id="description" name="description" th:field="*{description}" placeholder="Please give detailed instructions for completing this task." required="required" /></div>
                 <div ><input type="submit" name="action-task-add" class="button" value="Add Task"/></div>
-            </div>
+
         </form>
     </div>
     <div id="tasks-list-container">
-        <form>
-            <ul id="tasks-list" th:each="task : ${tasks}">
-                <li>
-                    <input class="check-status" type="checkbox" name="task[]" />
-                    <span th:text="'title: ' + ${task.title}"></span>
-                    <div th:text="'description: ' + ${task.description}"></div>
-                </li>
-            </ul>
-            <form id="tasks-list-actions" th:action="@{/task/setComplete/{taskId}/{projectId}(taskId=${task.id}, projectId=${project.id})}" method="post">
-                <input type="submit" value="Sign Off" th:if="${not task.isComplete()}" onclick="style.display = 'none'" />
-            </form>
-        </form>
+        <!--<form>-->
+            <!--<ul id="tasks-list" th:each="task : ${tasks}">-->
+                <!--<li>-->
+                    <!--<input class="check-status" type="checkbox" name="task[]" />-->
+                    <!--<span th:text="'title: ' + ${task.title}"></span>-->
+                    <!--<div th:text="'description: ' + ${task.description}"></div>-->
+                    <!--<form id="tasks-list-actions" th:action="@{/task/setComplete/{taskId}/{projectId}(taskId=${task.id}, projectId=${project.id})}" method="post">-->
+                        <!--<input type="submit" class="btn btn-primary" value="Sign Off" th:if="${not task.isComplete()}" onclick="style.display = 'none'" />-->
+                    <!--</form>-->
+                <!--</li>-->
+            <!--</ul>-->
+
+        <!--</form>-->
+        <div th:each="task : ${tasks}" class="container project-task">
+            <div>
+                <input class="check-status" type="checkbox" name="task[]" />
+                <div th:text="'title: ' + ${task.title}" />
+                <div th:text="'description: ' + ${task.description}" />
+                <form th:action="@{/task/setComplete/{taskId}/{projectId}(taskId=${task.id}, projectId=${project.id})}" method="post">
+                    <input type="submit" class="btn btn-primary" value="Sign Off" th:if="${not task.isComplete()}" onclick="style.display = 'none'" />
+                </form>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -121,7 +132,7 @@
 
 
 
-<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<!--<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>-->
 
 <footer th:replace="fragments/footer :: footer"></footer>
 <script th:replace="fragments/scripts :: scripts"></script>

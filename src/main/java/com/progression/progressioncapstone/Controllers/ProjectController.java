@@ -40,6 +40,14 @@ public class ProjectController {
     @GetMapping("/create")
     public String createForm(Model model){
         model.addAttribute("project", new Project());
+        User loggedInUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        boolean isLoggedIn = loggedInUser != null;
+        User user = users.findOne(loggedInUser.getId());
+        model.addAttribute("projects", projectsRepo.findAllByOwner(user.getId()));
+        model.addAttribute("user", user);
+        model.addAttribute("task", new Task());
+        model.addAttribute("isLoggedIn", isLoggedIn);
+        model.addAttribute("loggedInUser", loggedInUser);
         return "project-create";
     }
 
