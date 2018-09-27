@@ -28,6 +28,8 @@ body.home {
     font-family: 'Teko', sans-serif;
     overflow-x: hidden;
     overflow-y: hidden;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 
 
 }
@@ -87,6 +89,8 @@ body.login-screen {
     color: white;
     overflow-x: hidden;
     overflow-y: hidden;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 
 }
 
@@ -99,6 +103,8 @@ body.register{
     font-size: medium;
     overflow-x: hidden;
     overflow-y: hidden;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 
 }
 .vid-container {

@@ -22,6 +22,7 @@
 <div class="animated fadeInUp"  id="main-content">
     <div id="progress" class="list-name">
         <h1 th:text="${project.title}"></h1>
+        <h2 th:text=" 'Due Date: ' + ${project.date}"></h2>
         <p id="progress-percent" th:text="${project.progress}" style="display: none" />
         <div class="progress">
             <div id="dynamic" class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
@@ -31,22 +32,24 @@
     </div>
 
     <div class="list-name" id="new-task">
+        <h2>Create a Task</h2>
         <form  th:action="@{/task/{projectId}(projectId=${project.id})}" th:method="post" th:object="${task}">
-                <div><input type="text" id="title" name="title" th:field="*{title}" placeholder="Please enter a title for this task." required="required" style="width: 300px; margin-bottom: 5px;" /></div>
-                <div><input type="text" id="description" name="description" align="top" th:field="*{description}" placeholder="Please give detailed instructions for completing this task." required="required" style="width: 500px; height: 200px; margin-bottom: 5px;"/></div>
+                <div><input type="text" id="title" name="title" th:field="*{title}" placeholder="Please enter a title for this task." required="required" style="width: 300px; margin-bottom: 10px;" /></div>
+                <div><input type="text" id="description" name="description" align="top" th:field="*{description}" placeholder="Please give detailed instructions for completing this task." required="required" style="width: 500px; height: 200px; margin-bottom: 10px;"/></div>
                 <div><input type="submit" name="action-task-add" class="button" value="Add Task"/></div>
 
         </form>
     </div>
     <div id="tasks-list-container">
+        <h2>Task List</h2>
         <div th:each="task : ${tasks}" class="container project-task">
             <div>
                 <div th:text="'title: ' + ${task.title}" />
                 <div th:text="'description: ' + ${task.description}" />
                 <form th:action="@{/task/setComplete/{taskId}/{projectId}(taskId=${task.id}, projectId=${project.id})}" method="post">
-                    <input type="submit" class="btn btn-primary" value="Completed" th:if="${not task.isComplete()}" onclick="style.display = 'none'" />
+                    <input type="submit" class="button" value="Mark as Completed" th:if="${not task.isComplete()}" onclick="style.display = 'none'" />
                 </form>
-                <hr style="color:black;" />
+                <hr />
             </div>
         </div>
     </div>
@@ -71,9 +74,7 @@
 
     });
 
-    function myFunction() {
-        document.getElementById("myBtn").disabled = true;
-    }
+
 </script>
 
 </body>
