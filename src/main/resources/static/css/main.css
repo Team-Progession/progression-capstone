@@ -32,6 +32,22 @@ body.home {
 
 }
 
+h1.fadeInUp {
+    top: 25%;
+    color: white;
+    font-size: 80px;
+    text-align: center;
+    text-shadow: 2px 2px 100px #000000;
+}
+
+p.fadeInUp {
+    top: 25%;
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    text-shadow: 2px 2px 8px #000000;
+}
+
 
 hr {
     background: white 25px;
@@ -43,23 +59,23 @@ hr {
 
 }
 
-.home-text1 {
-    top: 25%;
-    color: white;
-    font-size: 80px;
-    text-align: center;
-    text-shadow: 2px 2px 100px #000000;
-}
+/*.home-text1 {*/
+    /*top: 25%;*/
+    /*color: white;*/
+    /*font-size: 80px;*/
+    /*text-align: center;*/
+    /*text-shadow: 2px 2px 100px #000000;*/
+/*}*/
 .line {
     text-shadow: 2px 2px 100px #000000;
 }
-.home-text2 {
-    top: 25%;
-    color: white;
-    font-size: 40px;
-    text-align: center;
-    text-shadow: 2px 2px 8px #000000;
-}
+/*.home-text2 {*/
+    /*top: 25%;*/
+    /*color: white;*/
+    /*font-size: 40px;*/
+    /*text-align: center;*/
+    /*text-shadow: 2px 2px 8px #000000;*/
+/*}*/
 
 body.login-screen {
     padding: 0;

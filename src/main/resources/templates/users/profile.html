@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="/css/profile.css"/>
 
 
-<body>
+<body class="profile">
 <nav th:replace="fragments/navbar :: navbar"></nav>
 
     <!--vvv this populates as 'Hello null' onto the profile page. how to pull user firstName?-->
@@ -26,6 +26,18 @@
 <!--</div>-->
 
 <div th:replace="fragments/sidebar :: sidebar"></div>
+<div  id="main-content">
+    <div class="list-name animated fadeinRight">
+        <h1>WELCOME TO PROGRESSION</h1>
+    </div>
+
+<div class="animated fadeInRight container project-task">
+
+    <p id="new-task">
+        CREATE A NEW PROJECT OR CONTINUE WORKING ON A PREVIOUS PROJECT
+    </p>
+</div>
+</div>
 
 <!--<div class="animated fadeInUp"  id="main-content">-->
     <!--<div class="list-name">-->
