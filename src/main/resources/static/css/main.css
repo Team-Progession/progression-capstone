@@ -211,4 +211,6 @@ body.register{
 
 }
 
-
+.navbar {
+    border-radius: 0;
+}
