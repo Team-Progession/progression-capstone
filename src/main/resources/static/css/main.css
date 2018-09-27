@@ -30,6 +30,8 @@ body.home {
     overflow-y: hidden;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-size: auto;
+
 
 
 }
@@ -91,6 +93,8 @@ body.login-screen {
     overflow-y: hidden;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-size: auto;
+
 
 }
 
@@ -105,6 +109,8 @@ body.register{
     overflow-y: hidden;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-size: auto;
+
 
 }
 .vid-container {
