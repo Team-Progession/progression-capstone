@@ -52,6 +52,9 @@ a
 {
     text-decoration: none;
 }
+.navigation-links-text{
+    font-size: 30px;
+}
 .list-hr {
     width: 95%;
     top-margin: 5px;
