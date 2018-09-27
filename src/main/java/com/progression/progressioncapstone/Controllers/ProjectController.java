@@ -2,6 +2,7 @@ package com.progression.progressioncapstone.Controllers;
 
 import com.progression.progressioncapstone.Models.*;
 import com.progression.progressioncapstone.Repositories.ProjectsRepo;
+import com.progression.progressioncapstone.Repositories.TasksRepo;
 import com.progression.progressioncapstone.Repositories.Users;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.ui.Model;
@@ -15,10 +16,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class ProjectController {
     ProjectsRepo projectsRepo;
     Users users;
+    TasksRepo tasksRepo;
 
-    public ProjectController(ProjectsRepo projectsRepo, Users users) {
+    public ProjectController(ProjectsRepo projectsRepo, Users users, TasksRepo tasksRepo) {
         this.projectsRepo = projectsRepo;
         this.users = users;
+        this.tasksRepo = tasksRepo;
     }
 
     @GetMapping("/project")
@@ -37,6 +40,14 @@ public class ProjectController {
     @GetMapping("/create")
     public String createForm(Model model){
         model.addAttribute("project", new Project());
+        User loggedInUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        boolean isLoggedIn = loggedInUser != null;
+        User user = users.findOne(loggedInUser.getId());
+        model.addAttribute("projects", projectsRepo.findAllByOwner(user.getId()));
+        model.addAttribute("user", user);
+        model.addAttribute("task", new Task());
+        model.addAttribute("isLoggedIn", isLoggedIn);
+        model.addAttribute("loggedInUser", loggedInUser);
         return "project-create";
     }
 

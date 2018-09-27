@@ -1,24 +1,41 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/head :: head"></head>
+<head></head>
+<link href="https://fonts.googleapis.com/css?family=Teko" rel="stylesheet" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
+<link rel="stylesheet" href="/css/profile.css"/>
 
 
 <body>
 <nav th:replace="fragments/navbar :: navbar"></nav>
-        <div>
-            <h1>Create Project</h1>
-                <div>
+
+<div th:replace="fragments/sidebar :: sidebar"></div>
+
+        <div class="animated fadeInUp" id="main-content">
+            <div class="list-name">
+                <h1>Create Project</h1>
+            </div>
+                <div class="container project-task">
                     <form th:action="create" th:method="post" th:object="${project}">
 
                         <label for="pTitle">Name of Project</label>
+                        <br />
                         <input id="pTitle" type="text" th:field="*{title}" />
-
+                        <br />
+                        <br />
                         <label for="pDate">Projected Completion Date</label>
+                        <br />
                         <input id="pDate" type="text" th:field="*{date}" />
-
+                        <br />
+                        <br />
                         <label for="pDescription">Project Summary</label>
-                        <input id="pDescription" type="text" th:field="*{description}" />
-                        <button class="btn btn-primary" type="submit">Submit</button>
+                        <br />
+                        <input id="pDescription" type="text" style="width: 300px; height: 200px;" th:field="*{description}" />
+                        <br />
+                        <br />
+                        <button class="button" type="submit">Submit</button>
                     </form>
                 </div>
         </div>
