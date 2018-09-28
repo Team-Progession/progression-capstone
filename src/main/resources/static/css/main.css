@@ -109,7 +109,7 @@ body.register {
 
 .inner-container {
     width: 200px;
-    height: 400px;
+    height: 300px;
     position: absolute;
     top: calc(65vh - 200px);
     left: calc(75vw - 200px);
@@ -118,7 +118,7 @@ body.register {
 
 .inner-container2 {
     width: 200px;
-    height: 550px;
+    height: 450px;
     position: absolute;
     top: calc(65vh - 200px);
     left: calc(75vw - 200px);
@@ -148,7 +148,7 @@ a {
     color: #fff;
     background: rgba(0, 0, 0, 0.13);
     top: calc(20vh - 200px);
-    padding: 30px 0px;
+    padding: 50px 0px;
 }
 
 .box h1 {
