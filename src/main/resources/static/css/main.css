@@ -120,7 +120,7 @@ body.register {
     width: 200px;
     height: 450px;
     position: absolute;
-    top: calc(65vh - 200px);
+    top: calc(55vh - 200px);
     left: calc(75vw - 200px);
     overflow: hidden;
 }
