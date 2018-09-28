@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<!--<header></header>-->
+<header></header>
 <!--<head th:replace="fragments/head :: head"></head>-->
 <!--<link href="https://fonts.googleapis.com/css?family=Teko" rel="stylesheet" />-->
 <!--<meta name="viewport" content="width=device-width, initial-scale=1" />-->
 <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />-->
 <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />-->
 <!--<link rel="stylesheet" href="/css/profile.css"/>-->
-<link rel="icon" type="image/x-icon" href="/img/favicon.ico"/>
 <link href="https://fonts.googleapis.com/css?family=Teko" rel="stylesheet" />
-<meta charset="utf-8" />
-<!--<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>-->
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
 <link rel="stylesheet" href="/css/profile.css"/>
 
 <link rel="stylesheet" href="/css/jump-to-top.css"/>
-<body class="container">
+<body>
 <nav th:replace="fragments/navbar2 :: navbar2"></nav>
 
 <div th:replace="fragments/sidebar :: sidebar"></div>
@@ -36,9 +34,9 @@
     <div class="list-name" id="new-task">
         <h2>Create a Task</h2>
         <form  th:action="@{/task/{projectId}(projectId=${project.id})}" th:method="post" th:object="${task}">
-                <div><input type="text" id="title" name="title" th:field="*{title}" placeholder="Please enter a title for this task." required="required" style="width: 300px; margin-bottom: 10px;" /></div>
-                <div><input type="text" id="description" name="description" align="top" th:field="*{description}" placeholder="Please give detailed instructions for completing this task." required="required" style="width: 500px; height: 200px; margin-bottom: 10px;"/></div>
-                <div><input type="submit" name="action-task-add" class="button" value="Add Task"/></div>
+            <div><input type="text" id="title" name="title" th:field="*{title}" placeholder="Please enter a title for this task." required="required" style="width: 300px; margin-bottom: 10px;" /></div>
+            <div><input type="text" id="description" name="description" align="top" th:field="*{description}" placeholder="Please give detailed instructions for completing this task." required="required" style="width: 500px; height: 200px; margin-bottom: 10px;"/></div>
+            <div><input type="submit" name="action-task-add" class="button" value="Add Task"/></div>
 
         </form>
     </div>
@@ -67,16 +65,12 @@
     $(function() {
         var current_progress = document.querySelector("#progress-percent").innerText;
         console.log(current_progress);
-                // current_progress += 10;
-                $("#dynamic")
-                .css("width", current_progress + "%")
-                .attr("aria-valuenow", current_progress)
-                .text(parseFloat(current_progress).toFixed(0) + "% Complete");
-
-
+        // current_progress += 10;
+        $("#dynamic")
+            .css("width", current_progress + "%")
+            .attr("aria-valuenow", current_progress)
+            .text(parseFloat(current_progress).toFixed(0) + "% Complete");
     });
-
-
 </script>
 
 </body>
