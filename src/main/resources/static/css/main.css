@@ -1,26 +1,10 @@
-/*label, input {*/
-    /*display:block; }*/
-/*input.text {*/
-    /*margin-bottom:12px; width:95%; padding: .4em; }*/
-/*fieldset {*/
-    /*padding:0; border:0; margin-top:25px; }*/
-/*h1 {*/
-    /*font-size: 1.2em; margin: .6em 0; }*/
-/*div#tasks-contain {*/
-    /*width: 350px; margin: 20px 0; }*/
-/*div#tasks-contain table {*/
-    /*margin: 1em 0; border-collapse: collapse; width: 100%; }*/
-/*div#tasks-contain table td, div#users-contain table th {*/
-    /*border: 1px solid #eee; padding: .6em 10px; text-align: left; }*/
-/*.ui-dialog .ui-state-error {*/
-    /*padding: .3em; }*/
-/*.validateTips {*/
-    /*border: 1px solid transparent; padding: 0.3em; }*/
+
 body {
     font-family: 'Teko', sans-serif;
 }
+
 body.home {
-    background-image: -webkit-linear-gradient( rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15) ), url("../img/road.jpg");
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../img/road.jpg");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -30,28 +14,25 @@ body.home {
     overflow-y: hidden;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: auto;
-
-
+    background-size: cover;
 
 }
 
 h1.fadeInUp {
-    top: 25%;
+    top: 45%;
     color: white;
-    font-size: 80px;
+    font-size: 60px;
     text-align: center;
     text-shadow: 2px 2px 100px #000000;
 }
 
 p.fadeInUp {
-    top: 25%;
+    top: 45%;
     color: white;
-    font-size: 40px;
+    font-size: 20px;
     text-align: center;
     text-shadow: 2px 2px 8px #000000;
 }
-
 
 hr {
     background: white 25px;
@@ -64,23 +45,23 @@ hr {
 }
 
 /*.home-text1 {*/
-    /*top: 25%;*/
-    /*color: white;*/
-    /*font-size: 80px;*/
-    /*text-align: center;*/
-    /*text-shadow: 2px 2px 100px #000000;*/
+/*top: 25%;*/
+/*color: white;*/
+/*font-size: 80px;*/
+/*text-align: center;*/
+/*text-shadow: 2px 2px 100px #000000;*/
 /*}*/
 .line {
     text-shadow: 2px 2px 100px #000000;
 }
-/*.home-text2 {*/
-    /*top: 25%;*/
-    /*color: white;*/
-    /*font-size: 40px;*/
-    /*text-align: center;*/
-    /*text-shadow: 2px 2px 8px #000000;*/
-/*}*/
 
+/*.home-text2 {*/
+/*top: 25%;*/
+/*color: white;*/
+/*font-size: 40px;*/
+/*text-align: center;*/
+/*text-shadow: 2px 2px 8px #000000;*/
+/*}*/
 body.login-screen {
     padding: 0;
     margin: 0;
@@ -91,14 +72,11 @@ body.login-screen {
     color: white;
     overflow-x: hidden;
     overflow-y: hidden;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     background-size: auto;
-
 
 }
 
-body.register{
+body.register {
     padding: 0;
     margin: 0;
     background-image: url("../img/buildings.jpeg");
@@ -107,41 +85,42 @@ body.register{
     font-size: medium;
     overflow-x: hidden;
     overflow-y: hidden;
-    background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: auto;
-
+    background-size: cover;
 
 }
+
 .vid-container {
     position: relative;
     height: 100vh;
     overflow: hidden;
     text-shadow: 2px 2px 8px #000000;
     top: calc(20vh - 200px);
-
+    margin-right: 25px;
 
 }
+
 .bgvid {
     position: absolute;
     left: 0;
     top: 0;
     width: 100vw;
 }
+
 .inner-container {
-    width: 400px;
-    height: 400px;
+    width: 200px;
+    height: 200px;
     position: absolute;
-    top: calc(37vh - 200px);
+    top: calc(45vh - 200px);
     left: calc(50vw - 200px);
     overflow: hidden;
 }
 
 .inner-container2 {
-    width: 400px;
-    height: 550px;
+    width: 200px;
+    height: 350px;
     position: absolute;
-    top: calc(37vh - 200px);
+    top: calc(45vh - 200px);
     left: calc(50vw - 200px);
     overflow: hidden;
 }
@@ -151,6 +130,7 @@ a {
     font-size: 15px;
 
 }
+
 .bgvid.inner {
     top: calc(-50vh + 200px);
     left: calc(-50vw + 200px);
@@ -161,7 +141,6 @@ a {
     filter: blur(10px);
 }
 
-
 .box {
     position: absolute;
     height: 100%;
@@ -171,11 +150,13 @@ a {
     top: calc(20vh - 200px);
     padding: 30px 0px;
 }
+
 .box h1 {
     text-align: center;
     margin: 30px 0;
-    font-size: 50px;
+    font-size: 30px;
 }
+
 .box input {
     display: block;
     width: 300px;
@@ -194,12 +175,14 @@ a {
     text-shadow: 2px 2px 6px #000000;
 
 }
+
 .box input:focus,
 .box input:active,
 .box button:focus,
 .box button:active {
     outline: none;
 }
+
 .box button {
     background: #2ecc71;
     border: 0;
@@ -207,21 +190,24 @@ a {
     text-shadow: 2px 2px 8px #000000;
 
     padding: 10px;
-    font-size: 30px;
+    font-size: 10px;
     width: 330px;
     margin: 20px auto;
     display: block;
     cursor: pointer;
 }
+
 .box button:active {
     background: #27ae60;
 }
+
 .box p {
     font-size: 34px;
     text-align: center;
     text-shadow: 2px 2px 8px #000000;
 
 }
+
 .box p span {
     cursor: pointer;
     color: white;
@@ -237,6 +223,241 @@ a {
     text-shadow: 2px 2px 6px #000000;
 }
 
-.navigation-links-text2{
-    font-size: 30px;
+.navigation-links-text2 {
+    font-size: 15px;
+}
+
+
+@media only screen and (min-width: 768px) {
+
+    body {
+        font-family: 'Teko', sans-serif;
+    }
+
+    body.home {
+        background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../img/road.jpg");
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100%;
+        font-family: 'Teko', sans-serif;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+
+    }
+
+    h1.fadeInUp {
+        top: 25%;
+        color: white;
+        font-size: 80px;
+        text-align: center;
+        text-shadow: 2px 2px 100px #000000;
+    }
+
+    p.fadeInUp {
+        top: 25%;
+        color: white;
+        font-size: 40px;
+        text-align: center;
+        text-shadow: 2px 2px 8px #000000;
+    }
+
+    hr {
+        background: white 25px;
+        width: 50%;
+    }
+
+    .home-container {
+        margin-top: 12%;
+
+    }
+
+    /*.home-text1 {*/
+    /*top: 25%;*/
+    /*color: white;*/
+    /*font-size: 80px;*/
+    /*text-align: center;*/
+    /*text-shadow: 2px 2px 100px #000000;*/
+    /*}*/
+    .line {
+        text-shadow: 2px 2px 100px #000000;
+    }
+
+    /*.home-text2 {*/
+    /*top: 25%;*/
+    /*color: white;*/
+    /*font-size: 40px;*/
+    /*text-align: center;*/
+    /*text-shadow: 2px 2px 8px #000000;*/
+    /*}*/
+    body.login-screen {
+        padding: 0;
+        margin: 0;
+        background-image: url("../img/buildings.jpeg");
+        background-attachment: fixed;
+        font-family: 'Teko', sans-serif;
+        font-size: medium;
+        color: white;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+
+    }
+
+    body.register {
+        padding: 0;
+        margin: 0;
+        background-image: url("../img/buildings.jpeg");
+        font-family: 'Teko', sans-serif;
+        color: white;
+        font-size: medium;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+
+    }
+
+    .vid-container {
+        position: relative;
+        height: 100vh;
+        overflow: hidden;
+        text-shadow: 2px 2px 8px #000000;
+        top: calc(20vh - 200px);
+
+    }
+
+    .bgvid {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100vw;
+    }
+
+    .inner-container {
+        width: 400px;
+        height: 400px;
+        position: absolute;
+        top: calc(37vh - 200px);
+        left: calc(50vw - 200px);
+        overflow: hidden;
+    }
+
+    .inner-container2 {
+        width: 400px;
+        height: 550px;
+        position: absolute;
+        top: calc(37vh - 200px);
+        left: calc(50vw - 200px);
+        overflow: hidden;
+    }
+
+    a {
+        color: white;
+        font-size: 15px;
+
+    }
+
+    .bgvid.inner {
+        top: calc(-50vh + 200px);
+        left: calc(-50vw + 200px);
+        filter: url("data:image/svg+xml;utf9,<svg%20version='1.1'%20xmlns='http://www.w3.org/2000/svg'><filter%20id='blur'><feGaussianBlur%20stdDeviation='10'%20/></filter></svg>#blur");
+        -webkit-filter: blur(10px);
+        -ms-filter: blur(10px);
+        -o-filter: blur(10px);
+        filter: blur(10px);
+    }
+
+    .box {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        color: #fff;
+        background: rgba(0, 0, 0, 0.13);
+        top: calc(20vh - 200px);
+        padding: 30px 0px;
+    }
+
+    .box h1 {
+        text-align: center;
+        margin: 30px 0;
+        font-size: 50px;
+    }
+
+    .box input {
+        display: block;
+        width: 300px;
+        margin: 15px auto;
+        padding: 15px;
+        background: rgba(0, 0, 0, 0.2);
+        color: #fff;
+        border: 0;
+    }
+
+    .box input::placeholder {
+        color: white;
+        font-size: 1.3em;
+        line-height: 1.3em;
+        text-transform: uppercase;
+        text-shadow: 2px 2px 6px #000000;
+
+    }
+
+    .box input:focus,
+    .box input:active,
+    .box button:focus,
+    .box button:active {
+        outline: none;
+    }
+
+    .box button {
+        background: #2ecc71;
+        border: 0;
+        color: #fff;
+        text-shadow: 2px 2px 8px #000000;
+
+        padding: 10px;
+        font-size: 30px;
+        width: 330px;
+        margin: 20px auto;
+        display: block;
+        cursor: pointer;
+    }
+
+    .box button:active {
+        background: #27ae60;
+    }
+
+    .box p {
+        font-size: 34px;
+        text-align: center;
+        text-shadow: 2px 2px 8px #000000;
+
+    }
+
+    .box p span {
+        cursor: pointer;
+        color: white;
+        text-shadow: 2px 2px 8px #000000;
+
+    }
+
+    .navbar {
+        border-radius: 0;
+    }
+
+    .iBox {
+        text-shadow: 2px 2px 6px #000000;
+    }
+
+    .navigation-links-text2 {
+        font-size: 30px;
+    }
+
 }
