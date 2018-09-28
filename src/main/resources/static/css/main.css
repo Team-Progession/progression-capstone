@@ -111,17 +111,17 @@ body.register {
     width: 200px;
     height: 200px;
     position: absolute;
-    top: calc(45vh - 200px);
-    left: calc(70vw - 200px);
+    top: calc(65vh - 200px);
+    left: calc(75vw - 200px);
     overflow: hidden;
 }
 
 .inner-container2 {
     width: 200px;
-    height: 350px;
+    height: 400px;
     position: absolute;
-    top: calc(45vh - 200px);
-    left: calc(70vw - 200px);
+    top: calc(65vh - 200px);
+    left: calc(75vw - 200px);
     overflow: hidden;
 }
 
