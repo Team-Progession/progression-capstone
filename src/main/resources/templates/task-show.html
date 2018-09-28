@@ -13,7 +13,7 @@
 <!--<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>-->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
-<link rel="stylesheet" href="/css/profile.css"/>
+<link rel="stylesheet" href="/css/task-show.css"/>
 
 <link rel="stylesheet" href="/css/jump-to-top.css"/>
 <body class="container">
@@ -44,7 +44,7 @@
     </div>
     <div id="tasks-list-container">
         <h2>Task List</h2>
-        <div th:each="task : ${tasks}" class="container project-task">
+        <div th:each="task : ${tasks}" class="project-task">
             <div>
                 <div th:text="'title: ' + ${task.title}" />
                 <div th:text="'description: ' + ${task.description}" />
