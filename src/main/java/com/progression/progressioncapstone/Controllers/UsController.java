@@ -9,7 +9,7 @@ public class UsController {
 
     @GetMapping("/us")
     public String returnAboutUsPage() {
-        return "/fragments/about-us";
+        return "about-us";
     }
 
 }

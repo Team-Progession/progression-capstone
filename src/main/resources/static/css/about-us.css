@@ -6,14 +6,24 @@ body {
     background-repeat: no-repeat;
     width: 100%;
     text-align: center;
+    font-family: 'Teko', sans-serif;
 
+
+}
+
+nav {
+    font-size: 20px;
+
+}
+
+.navigation-links-text {
+    font-size: 30px;
 }
 
 .text1 {
     color: #000000;
     font-size: 58px;
     text-align: center;
-    font-family: Futura;
 }
 
 h5 {
@@ -23,7 +33,7 @@ h5 {
 
 h4 {
     text-shadow: 0px .3px lightgray;
-    font-size: 1.5em;
+    font-size: 40px;
 }
 
 li {
