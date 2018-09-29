@@ -10,11 +10,11 @@
 <link rel="icon" type="image/x-icon" href="/img/favicon.ico"/>
 <link href="https://fonts.googleapis.com/css?family=Teko" rel="stylesheet" />
 <meta charset="utf-8" />
-<!--<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>-->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<title>Progression</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
 <link rel="stylesheet" href="/css/profile.css"/>
-
 <link rel="stylesheet" href="/css/jump-to-top.css"/>
 <body class="container">
 <nav th:replace="fragments/navbar2 :: navbar2"></nav>
@@ -26,7 +26,7 @@
         <h1 th:text="${project.title}"></h1>
         <h2 th:text=" 'Due Date: ' + ${project.date}"></h2>
         <p id="progress-percent" th:text="${project.progress}" style="display: none" />
-        <div class="progress center-block">
+        <div class="progress center-block" style="width: 85%">
             <div id="dynamic" class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
                 <span id="current-progress"></span>
             </div>
@@ -67,7 +67,6 @@
     $(function() {
         var current_progress = document.querySelector("#progress-percent").innerText;
         console.log(current_progress);
-                // current_progress += 10;
                 $("#dynamic")
                 .css("width", current_progress + "%")
                 .attr("aria-valuenow", current_progress)
