@@ -10,11 +10,11 @@
         <div class="inner-container2">
             <div class="box">
                 <h1>Register</h1>
-                <input class="iBox" id="username" placeholder="Username" th:field="*{username}"/>
-                <input class="iBox" type="password" id="password" placeholder="Password" th:field="*{password}"/>
-                <input class="iBox" id="firstname" placeholder="First Name" th:field="*{firstName}" />
-                <input class="iBox" id="lastname" placeholder="Last Name" th:field="*{lastName}" />
-                <input class="iBox" id="email" placeholder="Email" th:field="*{email}" />
+                <input class="iBox" id="username" placeholder="Username" th:field="*{username}" required="required"/>
+                <input class="iBox" type="password" id="password" placeholder="Password" th:field="*{password}" required="required"/>
+                <input class="iBox" id="firstname" placeholder="First Name" th:field="*{firstName}" required="required" />
+                <input class="iBox" id="lastname" placeholder="Last Name" th:field="*{lastName}" required="required" />
+                <input class="iBox" id="email" placeholder="Email" th:field="*{email}" required="required"/>
                 <button type="submit" id="login-submit" value="Sign me up!">Sign Me Up</button>
 
             </div>
