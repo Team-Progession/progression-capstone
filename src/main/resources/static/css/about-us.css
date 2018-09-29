@@ -1,0 +1,94 @@
+body {
+    /*margin-top: 50px;*/
+    background-image: url("/img/6894141-blurred.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    text-align: center;
+
+}
+
+.text1 {
+    color: #000000;
+    font-size: 58px;
+    text-align: center;
+    font-family: Futura;
+}
+
+h5 {
+    color: #e8e8e8;
+    text-shadow: 22px 55px 189px #000000;
+}
+
+h4 {
+    text-shadow: 0px .3px lightgray;
+    font-size: 1.5em;
+}
+
+li {
+    list-style-type: none;
+}
+
+.cont {
+    background-color: rgba(21, 21, 21, 0.46);
+}
+
+.contT {
+    background-color: rgba(85, 85, 85, 0.46);
+}
+
+img:hover {
+    opacity: 0.7;
+}
+
+.col-md-6 {
+    max-width: 310px;
+}
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 28%;
+    height: 40%;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+    box-shadow: 22px 55px 189px #000000;
+
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-linkedin {
+    background: #00629c;
+    color: white;
+}
+
+.fa-github {
+    background: #060000;
+    color: white;
+}
+
+a:link {
+    text-decoration: none;
+    text-align: center;
+
+}
+
+.rounded-circle {
+    height: 64px;
+    width: 63px;
+}
+.navbar{
+    border-radius: 0;
+}
+.navigation-links-text2 {
+    font-size: 30px;
+}
+.navbar-collapse{
+    flex-basis: 0;
+}
