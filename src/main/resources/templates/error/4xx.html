@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title th:text="'Ooops, ' + ${error}"></title>
+    <style>
+        body {
+            /*margin-top: 50px;*/
+            background-image: url("/img/6894141-blurred.jpg");
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100%;
+            text-align: center;
+            font-family: 'Teko', sans-serif;
+            background-size: cover;
+
+
+
+        }
+        h1 {
+            left: 0;
+            line-height: 200px;
+            margin: auto;
+            position: absolute;
+            width: 100%;
+            padding-top: 10%;
+        }
+    </style>
+</head>
+<body>
+<th:block th:switch="${error}">
+    <div th:case="'Not Found'">
+        <h1>Page not found!! Try looking somewhere else..</h1>
+    </div>
+    <div th:case="'Forbidden'">
+        <h1>You don't have permission to view this page.</h1>
+    </div>
+</th:block>
+
+</body>
+</html>
